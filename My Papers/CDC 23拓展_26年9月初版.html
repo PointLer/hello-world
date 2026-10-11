@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>WPEF ��� TSIPN working manuscript</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  :root { color-scheme: light; }
+  html { background: #f3f5f7; }
+  body { max-width: 1040px; margin: 28px auto; padding: 48px 64px; background: white; color: #1f2933; font: 17px/1.68 Georgia, 'Times New Roman', serif; box-shadow: 0 2px 18px #dce1e5; }
+  h1,h2,h3 { font-family: system-ui, sans-serif; line-height: 1.3; color: #183248; }
+  h1 { font-size: 30px; margin: 0 0 30px; }
+  h2 { font-size: 25px; margin-top: 42px; border-bottom: 1px solid #dbe2e8; padding-bottom: 9px; }
+  h3 { font-size: 20px; margin-top: 28px; }
+  p { margin: 12px 0; }
+  a { color: #145b87; overflow-wrap: anywhere; }
+  pre { background: #f4f6f8; border: 1px solid #dfe4e8; border-radius: 4px; padding: 18px; overflow: auto; line-height: 1.5; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: 0.86em; }
+  table { display: block; overflow-x: auto; width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+  th,td { border-bottom: 1px solid #dce1e5; padding: 10px 12px; vertical-align: top; }
+  th { background: #eef2f5; font-family: system-ui, sans-serif; text-align: left; }
+  math[display="block"] { display: block; overflow-x: auto; padding: 12px 0; margin: 12px 0; }
+  .math.display { display:block; overflow-x:auto; }
+  @media(max-width:800px) { body { margin:0; padding:25px 20px; font-size:16px; } h1 { font-size:26px; } }
+  @media print { html,body { background:white; box-shadow:none; margin:0; padding:0; max-width:none; } h2,h3 { break-after:avoid; } pre,table { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">WPEF ��� TSIPN working manuscript</h1>
+</header>
+<h1
+id="information-hierarchies-and-witness-path-erasure-fusion-for-finite-horizon-byzantine-resilient-sensing">Information
+Hierarchies and Witness-Path Erasure Fusion for Finite-Horizon
+Byzantine-Resilient Sensing</h1>
+<p><strong>Working manuscript — prepared for the regular-paper format of
+IEEE Transactions on Signal and Information Processing over
+Networks.</strong></p>
+<p><strong>Author information:</strong> to be supplied by the authors;
+no affiliations or funding statements are inferred.</p>
+<p><strong>Draft status, 17 September 2026.</strong> The mathematical
+model and algorithm below follow the supplied WPEF candidate and
+general-graph extension. The reported numerical evidence consists of
+independent exact-arithmetic checks and a clearly separated historical
+information-ablation summary. It is not a completed original-simulator,
+held-out, or field validation. The companion editorial note records the
+journal research, source versions, and remaining validation tasks. PAWLF
+is not part of the proposed method.</p>
+<h2 id="abstract">Abstract</h2>
+<p>Finite communication deadlines make Byzantine-resilient sensing a
+problem of both corrupted reports and selectively delivered evidence. We
+study binary state estimation at a trusted sink that receives
+authenticated source tokens over a known network. Compromised nodes can
+falsify their own reports and filter forwarded tokens according to a
+fixed state-aware mechanism. We distinguish four observation levels that
+retain counts, source identities, arrival times, or their joint record.
+We propose witness-path erasure fusion, which uses a shortest-path tree
+to organize evidence into disjoint source groups. Missing or late
+evidence certifies that its witness group contains a compromised node;
+the detector erases flagged groups and applies majority voting to the
+remainder. We derive a residual attack-budget certificate and a
+conditional error bound without treating all retained evidence as
+unbiased. For networks having unique paths within the deadline, we
+obtain an exact single-attacker risk formula. A two-round ring
+specialization attains the clean-constrained minimax value with a
+deterministic rule and strictly separates its performance from every
+count-based rule over an explicit accuracy interval. The detector
+requires linear online work and no attack-distribution training.
+Exact-arithmetic checks support the structural identities; broader
+performance validation remains to be completed. The results identify
+conditions under which provenance enables inexpensive, certifiable
+defense rather than merely increasing the observation dimension.</p>
+<p><strong>Index Terms—</strong> Byzantine resilience, distributed
+detection, finite-horizon inference, information hierarchy, relay
+censoring, source provenance.</p>
+<h2 id="i.-introduction">I. Introduction</h2>
+<p>Networked sensing combines individually unreliable observations to
+decide a common environmental state. The security objective is not
+necessarily to recover every message or identify every malicious node.
+It is to preserve the reliability of the collective decision when part
+of the communication infrastructure is adversarial. Our earlier
+ring-lattice study formulated the interaction between an operator and a
+Byzantine attacker through a consensus-threshold game [1]. The present
+work addresses a different operational constraint: a trusted sink must
+decide after a finite number of local communication rounds, and it
+cannot read all original observations directly.</p>
+<p>A representative setting is a perimeter-monitoring network whose
+local sensors report a binary abnormal-condition indicator to a
+protected gateway. This setting motivates a deadline and a trusted
+decision endpoint; it is not presented as an existing deployment of the
+proposed algorithm. Selective forwarding is a recognized threat in
+low-power multihop networks [2]. A compromised relay may pass some
+source reports and suppress others. If that selection depends on the
+label, received evidence is not a label-independent subsample of the
+original observations. Network structure then affects not only the
+quantity of evidence, but also which statistical information reaches the
+sink before the deadline.</p>
+<p>The available information is equally important. A counting detector
+sees aggregate votes. An identity-aware detector can associate a missing
+or received vote with its source. A time-aware detector can distinguish
+arrivals across rounds without necessarily knowing the source, while a
+joint record preserves both associations. These representations restrict
+the defense rules that can be implemented. Their set-inclusion
+relationships alone do not establish a useful security result: a richer
+representation always permits the detector to ignore information. The
+substantive questions are when the additional record supports a better
+worst-case decision, and whether a simple rule can realize that
+advantage.</p>
+<h3 id="a.-related-work-and-the-specific-gap">A. Related Work and the
+Specific Gap</h3>
+<p>Consensus-based Byzantine detection has studied attacks on networked
+statistics and robust weighted updates [3]. Its iterative state dynamics
+and local decisions differ from the fixed source tokens and single
+terminal decision considered here. Detection in tree networks has also
+been analyzed through attack optimization, detector design, and
+reputation mechanisms [4]. Consequently, neither structured topology nor
+Byzantine binary detection is itself a new problem. Our focus is the
+joint role of source attribution and delivery time under a fixed
+decision deadline.</p>
+<p>Audit-bit schemes use additional consistency information to improve
+distributed Bayesian detection. Quan et al. [5] analyze strategic
+attacks on traditional audit-bit processing and develop enhanced fusion
+schemes. Their paired direct and relayed reports are an important
+related example of auxiliary information supporting defense. Our
+detector instead uses the source records and locally measured arrival
+times already generated by the specified flooding protocol. It does not
+add direct report channels or audit transmissions. The distinction must
+be made at the observation-model and guarantee levels, not merely
+through the name of the algorithm.</p>
+<p>Trust-assisted hypothesis testing supplies another close comparison.
+Cavorsi et al. [6] develop detectors using stochastic trust observations
+in addition to reported measurements. Here no separate trust-sensing
+channel is assumed. A group-level certificate follows from a
+deterministic shortest-path implication. Disjoint-path ideas also have a
+long history in Byzantine-resilient topology discovery and message
+delivery [7]. We assume a known topology and do not claim to solve
+either task. A witness path is only an analytical route that would
+ensure timely delivery if its nodes were loyal; the actual message path
+need not be observed.</p>
+<p>These distinctions lead to the central question of this paper:
+<strong>can delivery provenance certify enough of an adversarial effect
+to support a low-cost detector, without estimating a least-favorable
+attack distribution or learning per-source trust weights?</strong> A
+certificate must do more than flag unusual data. Its probabilistic use
+must remain valid even though the decision to retain evidence depends on
+the attack and the observations. Otherwise, the detector would
+reintroduce the selection bias that motivated the problem.</p>
+<h3 id="b.-approach-and-contributions">B. Approach and
+Contributions</h3>
+<p>We introduce <strong>witness-path erasure fusion (WPEF)</strong>. A
+shortest-path tree partitions the expected sources into root branches. A
+missing or late token certifies the presence of at least one compromised
+node in its branch. WPEF erases flagged branches and votes on the
+remainder, with a deterministic sink-following tie rule. The method
+leaves the communication protocol unchanged.</p>
+<p>The first contribution is a general-graph connection between delivery
+records, residual attack budget, and conditional decision risk. The
+proof identifies a fixed set of entirely loyal witness groups before
+conditioning on the observed erasures. This avoids the incorrect
+assumption that every retained observation is an unbiased sensor
+sample.</p>
+<p>The second contribution is a structural performance characterization.
+We derive an exact single-attacker risk expression for networks with
+unique source-to-sink paths within the deadline. Its ring specialization
+yields a deterministic minimax detector in a two-round regime and a
+strict comparison against all count-based rules on an explicit parameter
+interval. The comparison uses a count-class lower bound and an
+attainable provenance-based upper bound, rather than a fixed-mixture
+posterior argument alone.</p>
+<p>The third contribution is a constructive implementation and cost
+analysis. WPEF requires no attack-distribution calibration. Its
+additional online work is linear in the number of received source
+records and witness groups. We distinguish dynamic counters, static
+topology maps, and the pre-existing authentication and
+duplicate-suppression costs. Independent exact checks examine the
+certificates and formulas on rings, trees, and graphs with alternative
+routes.</p>
+<p>This paper extends [1] through a different observation architecture,
+a finite deadline, an information hierarchy, and a new erasure detector.
+It does not transfer the earlier threshold-game equilibrium to the
+present single-sink problem. Section II specifies the model and
+comparison criterion. Section III describes WPEF. Section IV proves the
+general certificate and risk bound. Section V studies structured
+networks and information separation. Section VI reports the available
+exact verification. Section VII discusses the scope of the results, and
+Section VIII concludes.</p>
+<h2 id="ii.-system-model-and-information-constrained-resilience">II.
+System Model and Information-Constrained Resilience</h2>
+<h3 id="a.-network-observations-and-communication">A. Network,
+Observations, and Communication</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G=(V,E)</annotation></semantics></math>
+be a known, connected, simple, undirected, unweighted graph, where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+is the node set and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+is the edge set. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>V</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">n=|V|</annotation></semantics></math>
+for the number of nodes and fix a trusted sink
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">f\in V</annotation></semantics></math>.
+Each edge takes one synchronous communication round. A hidden state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>+</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X\in\{-1,+1\}</annotation></semantics></math>
+has equal prior probabilities. At time zero, node
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">j\in V</annotation></semantics></math>
+obtains an observation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>j</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>+</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y_j\in\{-1,+1\}</annotation></semantics></math>,
+with</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>=</mo><mi>+</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>=</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mi>j</mi></msub><mo>=</mo><mi>X</mi><mo>∣</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>p</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>+</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="1.0em"></mspace><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>&lt;</mo><mi>p</mi><mo>&lt;</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Pr(X=+1)=\Pr(X=-1)=\frac12,
+\qquad
+\Pr(Y_j=X\mid X=x)=p,
+\quad x\in\{-1,+1\},\quad \frac12&lt;p&lt;1.
+\tag{1}
+</annotation></semantics></math></p>
+<p>The observations are independent conditional on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+The common accuracy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+is used in performance analysis, but WPEF does not need its value to
+execute. The sink’s own observation is denoted by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>f</mi></msub><mo>=</mo><msub><mi>Y</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">s_f=Y_f</annotation></semantics></math>.</p>
+<p>Each source generates one authenticated token containing its
+identifier and a binary label. Authentication here protects both the
+identifier and the label of a loyal source from modification by relays.
+A compromised source can choose its own label. Loyal nodes retain the
+first token accepted from each source and persistently forward it to
+their neighbors. Later copies of the same source are ignored.
+Communication proceeds for an integer horizon
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">T\ge1</annotation></semantics></math>;
+the terminal decision is made at round
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>.
+The degenerate case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">T=0</annotation></semantics></math>
+consists only of the sink observation.</p>
+<p>There is no random link loss, queueing, congestion, or uncertainty in
+the locally recorded arrival round. Token forwarding does not depend on
+the labels of other tokens. These are analysis assumptions, not claims
+about a general wireless protocol. In particular, the model is not an
+implementation of the routing protocol discussed in [2].</p>
+<p>For nodes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>,</mo><mi>f</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">j,f\in V</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">d_G(j,f)</annotation></semantics></math>
+denote their shortest-path distance. Define the expected source set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>T</mi></msub><annotation encoding="application/x-tex">B_T</annotation></semantics></math>,
+its size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mn>0</mn></msub><annotation encoding="application/x-tex">N_0</annotation></semantics></math>,
+and the number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+of expected external sources by</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>T</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>j</mi><mo>∈</mo><mi>V</mi><mo>:</mo><msub><mi>d</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>T</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>N</mi><mn>0</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>B</mi><mi>T</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>k</mi><mo>=</mo><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B_T=\{j\in V:d_G(j,f)\le T\},
+\qquad N_0=|B_T|,
+\qquad k=N_0-1.
+\tag{2}
+</annotation></semantics></math></p>
+<p>For each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∈</mo><msub><mi>B</mi><mi>T</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">j\in B_T\setminus\{f\}</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>j</mi></msub><annotation encoding="application/x-tex">\tau_j</annotation></semantics></math>
+be its first arrival round, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>j</mi></msub><mo>=</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">\tau_j=\infty</annotation></semantics></math>
+when it has not arrived by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>j</mi></msub><annotation encoding="application/x-tex">L_j</annotation></semantics></math>
+be its received label when it arrives. Its normal arrival round is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>j</mi></msub><mo>=</mo><msub><mi>d</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">d_j=d_G(j,f)</annotation></semantics></math>.
+A source outside
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>T</mi></msub><annotation encoding="application/x-tex">B_T</annotation></semantics></math>
+cannot reach the sink by the deadline under the allowed attack actions,
+which add neither edges nor faster transmissions.</p>
+<h3 id="b.-static-attack-library">B. Static Attack Library</h3>
+<p>An attack action is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo>,</mo><mi>ρ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\alpha=(M,\rho)</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊆</mo><mi>V</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">M\subseteq V\setminus\{f\}</annotation></semantics></math>
+is the compromised set and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+is a forwarding/emission mechanism. The integer budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>m</mi><mo>≤</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le m\le n-1</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>M</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">|M|\le m</annotation></semantics></math>.
+Placement is fixed before the sensing errors are drawn and remains fixed
+during the episode. The mechanism can use the true state as a worst-case
+knowledge assumption, but cannot choose a new placement or adapt
+filtering to the complete observation vector.</p>
+<p>We use the eight homogeneous mechanisms formed from two source
+actions and four relay actions. Every compromised source either emits
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>X</mi></mrow><annotation encoding="application/x-tex">-X</annotation></semantics></math>
+(<code>emit_wrong</code>) or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+(<code>emit_correct</code>). Every compromised relay either forwards all
+tokens, blocks tokens labeled
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+blocks tokens labeled
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>X</mi></mrow><annotation encoding="application/x-tex">-X</annotation></semantics></math>,
+or blocks every transmission from a compromised node to a loyal node
+(<code>boundary_cut</code>). The same selected mechanism is applied at
+the compromised nodes. Outgoing source tokens are also subject to the
+selected filter. The filter may inspect the current token label and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+but not another token’s observation or the sink’s private reading.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝒜</mi><mi>m</mi></msub><annotation encoding="application/x-tex">\mathcal A_m</annotation></semantics></math>
+be the resulting finite set of placement–mechanism actions, including
+the empty placement. The clean action is denoted by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>.
+A worst-case action may be selected separately for each prescribed
+horizon and detector; this is offline optimization over episode-static
+actions, not a mobile attacker. For ring-lattice evaluations the
+principal region is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>&lt;</mo><mn>2</mn><mi>a</mi></mrow><annotation encoding="application/x-tex">m&lt;2a</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi></mrow><annotation encoding="application/x-tex">2a</annotation></semantics></math>
+is the sink degree defined below. Some general-graph stress checks
+deliberately examine boundary budgets and are identified separately.</p>
+<h3 id="c.-four-observation-levels">C. Four Observation Levels</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⊥</mi><annotation encoding="application/x-tex">\bot</annotation></semantics></math>
+denote a missing record. For each expected external source, define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>j</mi></msub><mo>=</mo><msub><mi>L</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">U_j=L_j</annotation></semantics></math>
+if it arrives and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>j</mi></msub><mo>=</mo><mi>⊥</mi></mrow><annotation encoding="application/x-tex">U_j=\bot</annotation></semantics></math>
+otherwise. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>b</mi></msub><annotation encoding="application/x-tex">c_b</annotation></semantics></math>
+be the number of arrived external labels equal to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>+</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">b\in\{-1,+1\}</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>⊥</mi></msub><mo>=</mo><mi>k</mi><mo>−</mo><msub><mi>c</mi><mrow><mi>−</mi><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>c</mi><mrow><mi>+</mi><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">c_{\bot}=k-c_{-1}-c_{+1}</annotation></semantics></math>.
+For each round
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>T</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">t\in\{1,\ldots,T\}</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mrow><mi>t</mi><mo>,</mo><mi>b</mi></mrow></msub><annotation encoding="application/x-tex">c_{t,b}</annotation></semantics></math>
+count external tokens that first arrive at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+with label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>.
+The four retained observations are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>Z</mi><mi mathvariant="normal">C</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>f</mi></msub><mo>,</mo><msub><mi>c</mi><mrow><mi>−</mi><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>c</mi><mrow><mi>+</mi><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>c</mi><mi>⊥</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>Z</mi><mi mathvariant="normal">I</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>f</mi></msub><mo>,</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>U</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>j</mi><mo>∈</mo><msub><mi>B</mi><mi>T</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>Z</mi><mi mathvariant="normal">T</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>f</mi></msub><mo>,</mo><msubsup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>c</mi><mrow><mi>t</mi><mo>,</mo><mi>−</mi><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>c</mi><mrow><mi>t</mi><mo>,</mo><mi>+</mi><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mi>T</mi></msubsup><mo>,</mo><msub><mi>c</mi><mi>⊥</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>Z</mi><mi mathvariant="normal">F</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>f</mi></msub><mo>,</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Q</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>j</mi><mo>∈</mo><msub><mi>B</mi><mi>T</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr></mtable><mspace width="2.0em"></mspace><msub><mi>Q</mi><mi>j</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>L</mi><mi>j</mi></msub><mo>,</mo><msub><mi>τ</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><msub><mi>τ</mi><mi>j</mi></msub><mo>≤</mo><mi>T</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mi>⊥</mi><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><msub><mi>τ</mi><mi>j</mi></msub><mo>&gt;</mo><mi>T</mi><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+\begin{aligned}
+Z_{\mathrm C}&amp;=(s_f,c_{-1},c_{+1},c_{\bot}),\\
+Z_{\mathrm I}&amp;=(s_f,(U_j)_{j\in B_T\setminus\{f\}}),\\
+Z_{\mathrm T}&amp;=(s_f,(c_{t,-1},c_{t,+1})_{t=1}^{T},c_{\bot}),\\
+Z_{\mathrm F}&amp;=(s_f,(Q_j)_{j\in B_T\setminus\{f\}}),
+\end{aligned}
+\qquad
+Q_j=
+\begin{cases}
+(L_j,\tau_j),&amp;\tau_j\le T,\\
+\bot,&amp;\tau_j&gt;T.
+\end{cases}
+\tag{3}
+</annotation></semantics></math></p>
+<p>The letters
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><mo>,</mo><mi mathvariant="normal">I</mi><mo>,</mo><mi mathvariant="normal">T</mi><mo>,</mo><mi mathvariant="normal">F</mi></mrow><annotation encoding="application/x-tex">\mathrm C,\mathrm I,\mathrm T,\mathrm F</annotation></semantics></math>
+mean Count, ID, Time, and Full, respectively. Public topology and the
+prescribed horizon are known at every level. The sink observation is
+never discarded. Count can equivalently be expressed using numbers that
+agree or disagree with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>f</mi></msub><annotation encoding="application/x-tex">s_f</annotation></semantics></math>.
+Time uses the first-arrival round, not excess delay alone. Full does not
+include an ingress neighbor, the actual route, or a hidden attack
+label.</p>
+<p>Writing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>≼</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">L\preceq H</annotation></semantics></math>
+when a fixed deterministic map converts
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>H</mi></msub><annotation encoding="application/x-tex">Z_H</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>L</mi></msub><annotation encoding="application/x-tex">Z_L</annotation></semantics></math>,
+we have Count below both ID and Time, and both below Full. This
+elementary information ordering will be used without presenting it as a
+principal theorem. It does not order arbitrary implementations that use
+those representations.</p>
+<h3 id="d.-risk-and-the-clean-performance-requirement">D. Risk and the
+Clean-Performance Requirement</h3>
+<p>A pure detector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>
+maps its retained observation to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>+</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{-1,+1\}</annotation></semantics></math>.
+A randomized detector instead specifies the probability of deciding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math>
+at each observation. For either convention, let</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>α</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ϕ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>Pr</mo><mi>α</mi></munder><mo stretchy="false" form="prefix">{</mo><mi>ϕ</mi><mo>≠</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>R</mi><mo>max</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ϕ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>max</mo><mrow><mi>α</mi><mo>∈</mo><msub><mi>𝒜</mi><mi>m</mi></msub></mrow></munder><msub><mi>R</mi><mi>α</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ϕ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+R_\alpha(\phi)=\Pr_\alpha\{\phi\ne X\},
+\qquad
+R_{\max}(\phi)=\max_{\alpha\in\mathcal A_m}R_\alpha(\phi),
+\tag{4}
+</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mo>Pr</mo><mi>α</mi></msub><annotation encoding="application/x-tex">\Pr_\alpha</annotation></semantics></math>
+is probability under action
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>,
+including any detector randomization. Majority assigns one vote to each
+received source and the sink. Its score is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">j</mi></mrow></msub><mo>=</mo><msub><mi>s</mi><mi>f</mi></msub><mo>+</mo><msub><mi>c</mi><mrow><mi>+</mi><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>c</mi><mrow><mi>−</mi><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">S_{\mathrm{Maj}}=s_f+c_{+1}-c_{-1}</annotation></semantics></math>.
+Our pure majority convention follows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>f</mi></msub><annotation encoding="application/x-tex">s_f</annotation></semantics></math>
+when this score is zero.</p>
+<p>For a nonnegative integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>N</mi></msub><annotation encoding="application/x-tex">B_N</annotation></semantics></math>
+be a binomial random variable with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+trials and success probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.
+Define the cumulative probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>N</mi></msub><annotation encoding="application/x-tex">F_N</annotation></semantics></math>
+and, for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N\ge1</annotation></semantics></math>,
+the honest-majority error
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mi>N</mi></msub><annotation encoding="application/x-tex">e_N</annotation></semantics></math>
+by</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>B</mi><mi>N</mi></msub><mo>≤</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>e</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>B</mi><mi>N</mi></msub><mo>&lt;</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>B</mi><mi>N</mi></msub><mo>=</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+F_N(t;p)=\Pr(B_N\le t),
+\qquad
+e_N(p)=\Pr(B_N&lt;N/2)+\frac12\Pr(B_N=N/2).
+\tag{5}
+</annotation></semantics></math></p>
+<p>We use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">F_N(t;p)=0</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&lt;0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">F_N(t;p)=1</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">t\ge N</annotation></semantics></math>;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">B_0=0</annotation></semantics></math>
+deterministically. With homogeneous independent honest votes,
+sink-following and fair random ties have the same error in (5), although
+they do not have the same episode output. Clean majority risk is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mn>0</mn></msub><mo>=</mo><msub><mi>e</mi><msub><mi>N</mi><mn>0</mn></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\beta_0=e_{N_0}(p)</annotation></semantics></math>.</p>
+<p>For a budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>≥</mo><msub><mi>β</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\beta\ge\beta_0</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>𝒟</mi><mi>L</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal D_L^{\mathrm p}(\beta)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>𝒟</mi><mi>L</mi><mi mathvariant="normal">r</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal D_L^{\mathrm r}(\beta)</annotation></semantics></math>
+denote the pure and randomized
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>L</mi></msub><annotation encoding="application/x-tex">Z_L</annotation></semantics></math>-measurable
+detectors satisfying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ϕ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">R_0(\phi)\le\beta</annotation></semantics></math>.
+Their constrained minimax risks are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>V</mi><mi>L</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>inf</mo><mrow><mi>ϕ</mi><mo>∈</mo><msubsup><mi>𝒟</mi><mi>L</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><msub><mi>R</mi><mo>max</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ϕ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>V</mi><mi>L</mi><mi mathvariant="normal">r</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>inf</mo><mrow><mi>ϕ</mi><mo>∈</mo><msubsup><mi>𝒟</mi><mi>L</mi><mi mathvariant="normal">r</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><msub><mi>R</mi><mo>max</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ϕ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+V_L^{\mathrm p}(\beta)=\inf_{\phi\in\mathcal D_L^{\mathrm p}(\beta)}R_{\max}(\phi),
+\qquad
+V_L^{\mathrm r}(\beta)=\inf_{\phi\in\mathcal D_L^{\mathrm r}(\beta)}R_{\max}(\phi).
+\tag{6}
+</annotation></semantics></math></p>
+<p>The main comparison uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\beta=\beta_0</annotation></semantics></math>.
+This prevents a defense from being declared successful solely because it
+discards network information and falls back to one sensor. It also makes
+the normal-performance requirement explicit. All claims of minimax
+optimality below concern this constrained game and the stated attack
+library.</p>
+<p>For a feasible pure algorithm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ϕ</mi><mi>L</mi></msub><annotation encoding="application/x-tex">\phi_L</annotation></semantics></math>,
+the decomposition</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mo>max</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ϕ</mi><mi>L</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msubsup><mi>V</mi><mi mathvariant="normal">F</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">[</mo><msubsup><mi>V</mi><mi>L</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msubsup><mi>V</mi><mi mathvariant="normal">F</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">]</mo><mo>+</mo><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">[</mo><msub><mi>R</mi><mo>max</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ϕ</mi><mi>L</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msubsup><mi>V</mi><mi>L</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">
+R_{\max}(\phi_L)-V_{\mathrm F}^{\mathrm p}(\beta)
+=
+\bigl[V_L^{\mathrm p}(\beta)-V_{\mathrm F}^{\mathrm p}(\beta)\bigr]
++
+\bigl[R_{\max}(\phi_L)-V_L^{\mathrm p}(\beta)\bigr]
+\tag{7}
+</annotation></semantics></math></p>
+<p>separates loss from the retained information and loss from its
+algorithmic use. This is a bookkeeping identity, not an additional
+contribution. It explains why an efficiently implemented Full-based rule
+need not outperform an exactly optimized Count rule everywhere.</p>
+<h2 id="iii.-witness-path-erasure-fusion">III. Witness-Path Erasure
+Fusion</h2>
+<h3 id="a.-witness-groups-and-the-erasure-decision">A. Witness Groups
+and the Erasure Decision</h3>
+<p>Fix a breadth-first-search tree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>
+rooted at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,
+with ties resolved by a predetermined node ordering. A
+breadth-first-search tree supplies a shortest path from every vertex to
+the root [8]. Retain its vertices in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>T</mi></msub><annotation encoding="application/x-tex">B_T</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+be the number of root children, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">[q]=\{1,\ldots,q\}</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>g</mi></msub><annotation encoding="application/x-tex">P_g</annotation></semantics></math>
+be the expected external vertices in child
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>’s
+subtree. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>T</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><munder><mo>⨆</mo><mrow><mi>g</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow></munder><msub><mi>P</mi><mi>g</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>s</mi><mi>g</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>P</mi><mi>g</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B_T\setminus\{f\}=\bigsqcup_{g\in[q]}P_g,
+\qquad s_g=|P_g|.
+\tag{8}
+</annotation></semantics></math></p>
+<p>Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>g</mi></msub><annotation encoding="application/x-tex">s_g</annotation></semantics></math>
+is the size of witness group
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.
+For any source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∈</mo><msub><mi>P</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">j\in P_g</annotation></semantics></math>,
+its tree path to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+has length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>j</mi></msub><annotation encoding="application/x-tex">d_j</annotation></semantics></math>
+and stays within
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>g</mi></msub><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">P_g\cup\{f\}</annotation></semantics></math>.
+The groups can be branching subtrees rather than single chains.
+Cross-edges remain available to the actual flooding process. Thus the
+witness tree is not a routing restriction.</p>
+<p>WPEF flags a group if any expected source in it is absent or later
+than its clean shortest arrival:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>g</mi></msub><mo>=</mo><mn>𝟏</mn><mo stretchy="false" form="prefix">{</mo><mo>∃</mo><mi>j</mi><mo>∈</mo><msub><mi>P</mi><mi>g</mi></msub><mo>:</mo><msub><mi>τ</mi><mi>j</mi></msub><mo>&gt;</mo><mi>T</mi><mspace width="0.222em"></mspace><mtext mathvariant="normal">or</mtext><mspace width="0.222em"></mspace><msub><mi>τ</mi><mi>j</mi></msub><mo>&gt;</mo><msub><mi>d</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>ℰ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>g</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>:</mo><msub><mi>A</mi><mi>g</mi></msub><mo>=</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A_g=\mathbf 1\{\exists j\in P_g:\tau_j&gt;T\ \text{or}\ \tau_j&gt;d_j\},
+\qquad
+\mathcal E=\{g\in[q]:A_g=1\}.
+\tag{9}
+</annotation></semantics></math></p>
+<p>The symbol
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>𝟏</mn><mo stretchy="false" form="prefix">{</mo><mi>⋅</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbf 1\{\cdot\}</annotation></semantics></math>
+is the indicator of its condition, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℰ</mi><annotation encoding="application/x-tex">\mathcal E</annotation></semantics></math>
+is the random set of erased groups. A missing record has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>j</mi></msub><mo>=</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">\tau_j=\infty</annotation></semantics></math>,
+so the two conditions are intentionally compatible. All sources in an
+unflagged group have arrived. WPEF forms</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi mathvariant="normal">W</mi></msub><mo>=</mo><msub><mi>s</mi><mi>f</mi></msub><mo>+</mo><munder><mo>∑</mo><mrow><mi>g</mi><mo>∉</mo><mi>ℰ</mi></mrow></munder><munder><mo>∑</mo><mrow><mi>j</mi><mo>∈</mo><msub><mi>P</mi><mi>g</mi></msub></mrow></munder><msub><mi>L</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ϕ</mi><mi mathvariant="normal">W</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mi>+</mi><mn>1</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><msub><mi>S</mi><mi mathvariant="normal">W</mi></msub><mo>&gt;</mo><mn>0</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mi>−</mi><mn>1</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><msub><mi>S</mi><mi mathvariant="normal">W</mi></msub><mo>&lt;</mo><mn>0</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>s</mi><mi>f</mi></msub><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><msub><mi>S</mi><mi mathvariant="normal">W</mi></msub><mo>=</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+S_{\mathrm W}=s_f+\sum_{g\notin\mathcal E}\sum_{j\in P_g}L_j,
+\qquad
+\phi_{\mathrm W}=
+\begin{cases}
++1,&amp;S_{\mathrm W}&gt;0,\\
+-1,&amp;S_{\mathrm W}&lt;0,\\
+s_f,&amp;S_{\mathrm W}=0.
+\end{cases}
+\tag{10}
+</annotation></semantics></math></p>
+<p>This rule uses Full information through source–time association, but
+compresses it to group anomalies and vote sums. It is not asserted to be
+a sufficient statistic for Full inference. An unflagged group is not
+certified loyal; a flagged group is not declared entirely malicious.
+Erasing a whole group intentionally sacrifices some potentially useful
+observations in return for a tractable structural guarantee.</p>
+<h3 id="b.-streaming-implementation">B. Streaming Implementation</h3>
+<p>For each source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+precompute its group index
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(j)</annotation></semantics></math>
+and normal distance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>j</mi></msub><annotation encoding="application/x-tex">d_j</annotation></semantics></math>.
+For each group, maintain a received count
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>g</mi></msub><annotation encoding="application/x-tex">r_g</annotation></semantics></math>,
+a signed sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>g</mi></msub><annotation encoding="application/x-tex">z_g</annotation></semantics></math>,
+and a Boolean late flag
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>g</mi></msub><annotation encoding="application/x-tex">b_g</annotation></semantics></math>.
+These three quantities are initialized to zero, zero, and false,
+respectively. They are internal counters, not additional sensor
+measurements.</p>
+<p><strong>Algorithm 1. Witness-path erasure fusion</strong></p>
+<pre class="text"><code>Input: trusted sink bit sf; horizon T; static maps group[j], dist[j];
+       expected group sizes size[g]; first accepted external-source records.
+Output: one binary decision at round T.
+
+Topology preprocessing:
+    Build a fixed breadth-first-search tree rooted at the sink.
+    Keep vertices with distance at most T.
+    Assign each external vertex to its root-child subtree.
+    Store group[j], dist[j], and size[g].
+
+At the start of an episode:
+    For each group g:
+        received[g] = 0; vote_sum[g] = 0; late[g] = false.
+
+For each first accepted expected source record (j, label, arrival_round):
+    g = group[j].
+    received[g] += 1.
+    vote_sum[g] += label.
+    late[g] = late[g] OR (arrival_round &gt; dist[j]).
+
+At the deadline:
+    score = sf.
+    For each group g:
+        erased = (received[g] &lt; size[g]) OR late[g].
+        If not erased: score += vote_sum[g].
+    If score &gt; 0: return +1.
+    If score &lt; 0: return -1.
+    Return sf.</code></pre>
+<p>Authentication and duplicate suppression are supplied by the
+unchanged protocol. No source contributes twice. Missingness is detected
+from a group’s expected size, so the decoder does not need per-source
+timeout queues. It also does not store the actual path of any token.</p>
+<h3 id="c.-computational-and-communication-costs">C. Computational and
+Communication Costs</h3>
+<p><strong>Proposition 1 (Implementation cost).</strong> In the word-RAM
+model with indexed source identifiers, graph preprocessing takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>E</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n+|E|)</annotation></semantics></math>
+time and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math>
+auxiliary space, excluding storage of the input graph. For a fixed
+horizon, deployment stores
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math>
+source-map entries and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(q)</annotation></semantics></math>
+group state. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi></mrow></msub><annotation encoding="application/x-tex">k_{\mathrm{rec}}</annotation></semantics></math>
+is the number of distinct expected external records received, online
+fusion takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>k</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>+</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k_{\mathrm{rec}}+q)</annotation></semantics></math>
+operations and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(q)</annotation></semantics></math>
+dynamic working words. Scanning a completed array of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+expected source slots instead takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math>
+time.</p>
+<p><em>Proof.</em> Breadth-first search visits every vertex and
+adjacency entry a constant number of times [8]. Group identifiers are
+inherited from parent vertices during the same traversal, and group
+sizes are incremented once per expected vertex. Each received record
+causes a constant number of map accesses, additions, and comparisons.
+The deadline pass processes each of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+groups once. Thus the online work is bounded by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><msub><mi>k</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub><mi>q</mi><mo>+</mo><msub><mi>c</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">c_1k_{\mathrm{rec}}+c_2q+c_3</annotation></semantics></math>
+for implementation constants
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>,</mo><msub><mi>c</mi><mn>2</mn></msub><mo>,</mo><msub><mi>c</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">c_1,c_2,c_3</annotation></semantics></math>.
+Each group has three dynamic variables. The two static maps have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+entries each; the input graph and parent pointers need not remain at
+deployment. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>≤</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">q\le k</annotation></semantics></math>,
+scanning all expected slots is linear in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>On a ring lattice, the maps can be calculated from vertex indices, so
+the general
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math>
+static map is unnecessary. The dynamic state remains proportional to the
+sink degree. The optional computation of a risk certificate in Section
+IV is distinct from computing the decision. Group sizes may be sorted
+once in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo>log</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(q\log q)</annotation></semantics></math>
+time, after which the required largest-group sums can be evaluated in an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(q)</annotation></semantics></math>
+pass.</p>
+<p>WPEF adds no routing round, path header, or retransmission to the
+specified protocol. Arrival rounds are measured locally. This does not
+make total communication linear in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>:
+a loose bound for naive persistent forwarding is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>E</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(T|E|n)</annotation></semantics></math>
+token-edge transmissions before batching. All detectors use that same
+delivery process. Topology discovery, signature verification, and
+source-buffer storage are excluded from Proposition 1 and must not be
+counted as eliminated overhead.</p>
+<h2 id="iv.-from-delivery-anomalies-to-a-risk-certificate">IV. From
+Delivery Anomalies to a Risk Certificate</h2>
+<h3 id="a.-fault-certification-without-node-identification">A. Fault
+Certification Without Node Identification</h3>
+<p>The erasure rule is useful only if an observed anomaly has a sound
+interpretation. For a fixed action
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>,
+define the set of genuinely corrupted witness groups</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℬ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>g</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>:</mo><msub><mi>P</mi><mi>g</mi></msub><mo>∩</mo><mi>M</mi><mo>≠</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathcal B=\{g\in[q]:P_g\cap M\ne\varnothing\}.
+\tag{11}
+</annotation></semantics></math></p>
+<p>The set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+is used for analysis and is not supplied to WPEF. A compromised node
+outside
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>T</mi></msub><annotation encoding="application/x-tex">B_T</annotation></semantics></math>
+belongs to none of these groups and cannot invalidate their loyal
+shortest witnesses.</p>
+<p><strong>Theorem 1 (Witness certification and conditional
+risk).</strong> Under the model of Section II, every episode
+satisfies</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℰ</mi><mo>⊆</mo><mi>ℬ</mi><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>ℰ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>ℬ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>M</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>m</mi><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>M</mi><mo>∩</mo><munder><mo>⋃</mo><mrow><mi>g</mi><mo>∉</mo><mi>ℰ</mi></mrow></munder><msub><mi>P</mi><mi>g</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>m</mi><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>ℰ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathcal E\subseteq\mathcal B,
+\qquad |\mathcal E|\le|\mathcal B|\le|M|\le m,
+\qquad
+\left|M\cap\bigcup_{g\notin\mathcal E}P_g\right|
+\le m-|\mathcal E|.
+\tag{12}
+</annotation></semantics></math></p>
+<p>For a fixed realized erased set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒥</mi><mo>⊆</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal J\subseteq[q]</annotation></semantics></math>
+of positive probability, define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝒥</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">r=|\mathcal J|</annotation></semantics></math>
+and the number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>𝒥</mi></msub><annotation encoding="application/x-tex">K_{\mathcal J}</annotation></semantics></math>
+of retained votes by</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>𝒥</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><munder><mo>∑</mo><mrow><mi>g</mi><mo>∉</mo><mi>𝒥</mi></mrow></munder><msub><mi>s</mi><mi>g</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+K_{\mathcal J}=1+\sum_{g\notin\mathcal J}s_g.
+\tag{13}
+</annotation></semantics></math></p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Λ</mi><mi>𝒥</mi></msub><annotation encoding="application/x-tex">\Lambda_{\mathcal J}</annotation></semantics></math>
+be the sum of the largest
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>min</mo><mo stretchy="false" form="prefix">{</mo><mi>m</mi><mo>−</mo><mi>r</mi><mo>,</mo><mi>q</mi><mo>−</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\min\{m-r,q-r\}</annotation></semantics></math>
+group sizes among the groups not in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒥</mi><annotation encoding="application/x-tex">\mathcal J</annotation></semantics></math>,
+with an empty sum equal to zero. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>Pr</mo><mi>α</mi></munder><mo stretchy="false" form="prefix">{</mo><msub><mi>ϕ</mi><mi mathvariant="normal">W</mi></msub><mo>≠</mo><mi>X</mi><mo>∣</mo><mi>ℰ</mi><mo>=</mo><mi>𝒥</mi><mo stretchy="false" form="postfix">}</mo><mo>≤</mo><msub><mi>F</mi><mrow><msub><mi>K</mi><mi>𝒥</mi></msub><mo>−</mo><msub><mi>Λ</mi><mi>𝒥</mi></msub></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">⌊</mo><msub><mi>K</mi><mi>𝒥</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">⌋</mo></mrow><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Pr_\alpha\{\phi_{\mathrm W}\ne X\mid\mathcal E=\mathcal J\}
+\le
+F_{K_{\mathcal J}-\Lambda_{\mathcal J}}
+\left(\left\lfloor K_{\mathcal J}/2\right\rfloor;p\right).
+\tag{14}
+</annotation></semantics></math></p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">r=m</annotation></semantics></math>,
+the retained groups are all loyal and the conditional error is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><msub><mi>K</mi><mi>𝒥</mi></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e_{K_{\mathcal J}}(p)</annotation></semantics></math>.</p>
+<p><em>Proof.</em> Suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>g</mi></msub><mo>∩</mo><mi>M</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">P_g\cap M=\varnothing</annotation></semantics></math>.
+Every source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∈</mo><msub><mi>P</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">j\in P_g</annotation></semantics></math>
+has a shortest witness path containing only loyal non-sink vertices.
+Persistent synchronous forwarding delivers its token along that path by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>j</mi></msub><annotation encoding="application/x-tex">d_j</annotation></semantics></math>.
+No allowed transmission can arrive before the graph distance, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>j</mi></msub><mo>=</mo><msub><mi>d</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\tau_j=d_j</annotation></semantics></math>.
+Hence</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>g</mi></msub><mo>∩</mo><mi>M</mi><mo>=</mo><mi>⌀</mi><mspace width="0.222em"></mspace><mo>⇒</mo><mspace width="0.222em"></mspace><msub><mi>A</mi><mi>g</mi></msub><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>A</mi><mi>g</mi></msub><mo>=</mo><mn>1</mn><mspace width="0.222em"></mspace><mo>⇒</mo><mspace width="0.222em"></mspace><msub><mi>P</mi><mi>g</mi></msub><mo>∩</mo><mi>M</mi><mo>≠</mo><mi>⌀</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+P_g\cap M=\varnothing\ \Longrightarrow\ A_g=0,
+\qquad
+A_g=1\ \Longrightarrow\ P_g\cap M\ne\varnothing.
+\tag{15}
+</annotation></semantics></math></p>
+<p>Disjointness of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>g</mi></msub><annotation encoding="application/x-tex">P_g</annotation></semantics></math>
+implies that each flagged group contains a different compromised vertex.
+Removing those groups therefore accounts for at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>ℰ</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|\mathcal E|</annotation></semantics></math>
+vertices of the budget, proving (12).</p>
+<p>For the probabilistic statement, fix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+before conditioning. Let</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><munder><mo>⋃</mo><mrow><mi>g</mi><mo>∉</mo><mi>ℬ</mi></mrow></munder><msub><mi>P</mi><mi>g</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>W</mi><mi>H</mi></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>∈</mo><mi>H</mi></mrow></munder><mn>𝟏</mn><mo stretchy="false" form="prefix">{</mo><msub><mi>Y</mi><mi>j</mi></msub><mo>=</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+H=\{f\}\cup\bigcup_{g\notin\mathcal B}P_g,
+\qquad
+W_H=\sum_{j\in H}\mathbf 1\{Y_j=X\}.
+\tag{16}
+</annotation></semantics></math></p>
+<p>Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is a fixed set of entirely loyal witness groups and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>H</mi></msub><annotation encoding="application/x-tex">W_H</annotation></semantics></math>
+counts their correct observations. Every source in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is retained. Conditional on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+the flags depend only on source observations in corrupted groups: loyal
+groups never flag, and token-wise noninteracting propagation prevents
+other source labels from affecting a corrupted-group token’s arrival.
+The conditional law of every correctness indicator in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is the same under either value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+Consequently,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>H</mi></msub><mo>∣</mo><mo stretchy="false" form="prefix">{</mo><mi>ℰ</mi><mo>=</mo><mi>𝒥</mi><mo stretchy="false" form="postfix">}</mo><mo>∼</mo><mo>Bin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>H</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+W_H\mid\{\mathcal E=\mathcal J\}\sim\operatorname{Bin}(|H|,p).
+\tag{17}
+</annotation></semantics></math></p>
+<p>This step would not follow for an attacker adapting its filter to the
+sink observation or to other tokens.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+be the number of retained sources outside
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.
+At most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>−</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">m-r</annotation></semantics></math>
+unflagged groups are corrupted, so</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>U</mi><mo>≤</mo><msub><mi>Λ</mi><mi>𝒥</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>K</mi><mi>𝒥</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>H</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mi>U</mi><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>H</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><msub><mi>K</mi><mi>𝒥</mi></msub><mo>−</mo><msub><mi>Λ</mi><mi>𝒥</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+0\le U\le\Lambda_{\mathcal J},
+\qquad
+K_{\mathcal J}=|H|+U,
+\qquad
+|H|\ge K_{\mathcal J}-\Lambda_{\mathcal J}.
+\tag{18}
+</annotation></semantics></math></p>
+<p>These
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+sources may include loyal but selectively observed nodes. Bound their
+signed contribution relative to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>U</mi></mrow><annotation encoding="application/x-tex">-U</annotation></semantics></math>,
+rather than assigning them sensor accuracy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.
+From (10),</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><msub><mi>S</mi><mi mathvariant="normal">W</mi></msub><mo>≥</mo><mn>2</mn><msub><mi>W</mi><mi>H</mi></msub><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>H</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mi>U</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+X S_{\mathrm W}\ge 2W_H-|H|-U.
+\tag{19}
+</annotation></semantics></math></p>
+<p>An erroneous decision has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><msub><mi>S</mi><mi mathvariant="normal">W</mi></msub><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">XS_{\mathrm W}\le0</annotation></semantics></math>,
+including a possibly erroneous tie. Therefore</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>ϕ</mi><mi mathvariant="normal">W</mi></msub><mo>≠</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><mrow><mo stretchy="true" form="prefix">{</mo><msub><mi>W</mi><mi>H</mi></msub><mo>≤</mo><mrow><mo stretchy="true" form="prefix">⌊</mo><msub><mi>K</mi><mi>𝒥</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">⌋</mo></mrow><mo stretchy="true" form="postfix">}</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\{\phi_{\mathrm W}\ne X\}
+\subseteq
+\left\{W_H\le\left\lfloor K_{\mathcal J}/2\right\rfloor\right\}.
+\tag{20}
+</annotation></semantics></math></p>
+<p>Use (17) and couple binomial variables by adding independent trials.
+For a fixed threshold, the lower-tail probability cannot increase with
+the number of trials. Equations (18)–(20) give (14). If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">r=m</annotation></semantics></math>,
+no corrupted group remains; the retained set is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>,
+and exchangeability gives sink correctness probability one half
+conditional on a tie. Equation (5) then gives the exact conditional
+error.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<h3 id="b.-interpretation-and-scope-of-the-certificate">B.
+Interpretation and Scope of the Certificate</h3>
+<p>Theorem 1 uses a graph-level implication to consume part of the
+attack budget. It does not assign a posterior probability of honesty to
+each source. The certificate is conservative in two ways: an erased
+group can contain loyal nodes, and every retained corrupted group is
+treated as potentially contributing only wrong votes. A large group can
+therefore make the bound in (14) uninformative. The theorem states
+validity, not uniform tightness.</p>
+<p>The observable quantity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>𝒥</mi></msub><annotation encoding="application/x-tex">K_{\mathcal J}</annotation></semantics></math>
+measures the evidence retained after erasure, whereas
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Λ</mi><mi>𝒥</mi></msub><annotation encoding="application/x-tex">\Lambda_{\mathcal J}</annotation></semantics></math>
+bounds the part that still requires adversarial treatment. Two networks
+with the same sink degree can have very different group-size
+distributions and consequently different bounds. This is why extension
+to arbitrary known graphs does not imply topology-independent
+effectiveness.</p>
+<p>Averaging (14) over erased sets gives an unconditional upper bound
+for each fixed action. Computing the corresponding worst-case average
+still requires the action-dependent distribution of flags.
+Alternatively, the maximum of its right-hand side over admissible erased
+sets is a distribution-free but generally more conservative upper bound.
+Neither operation is required for the online decision.</p>
+<p><strong>Corollary 1 (Clean preservation).</strong> Under the clean
+action,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℰ</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">\mathcal E=\varnothing</annotation></semantics></math>,
+so WPEF agrees episode by episode with majority using the same
+sink-following tie convention. In particular,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ϕ</mi><mi mathvariant="normal">W</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>e</mi><msub><mi>N</mi><mn>0</mn></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R_0(\phi_{\mathrm W})=e_{N_0}(p)=\beta_0.
+\tag{21}
+</annotation></semantics></math></p>
+<p>The same equality of clean risks holds against a fair-tie majority
+baseline under the homogeneous symmetric model; episode-wise equality
+between different tie conventions is not asserted.</p>
+<h2 id="v.-structured-networks-and-the-value-of-information">V.
+Structured Networks and the Value of Information</h2>
+<h3 id="a.-an-exact-risk-formula-for-unique-deadline-routes">A. An Exact
+Risk Formula for Unique Deadline Routes</h3>
+<p>General risk bounds isolate the cost of unresolved groups. Exact
+formulas are available when the deadline restricts every expected source
+to a unique simple route to the sink. Assume this property in the
+present subsection. The union of those routes is a rooted tree on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>T</mi></msub><annotation encoding="application/x-tex">B_T</annotation></semantics></math>,
+and its root branches give the witness groups. The property holds for
+trees. It also holds for a pure ring before a longer alternative route
+becomes feasible.</p>
+<p>Assume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math>
+and an odd normal source count
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mn>0</mn></msub><annotation encoding="application/x-tex">N_0</annotation></semantics></math>.
+For a possible attacked source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∈</mo><msub><mi>B</mi><mi>T</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">v\in B_T\setminus\{f\}</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">s(v)</annotation></semantics></math>
+be its root-branch size and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h(v)</annotation></semantics></math>
+be the number of its proper descendants in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>T</mi></msub><annotation encoding="application/x-tex">B_T</annotation></semantics></math>.
+Define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">\bar p=1-p</annotation></semantics></math>.
+Introduce the two action risks</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>a</mi><mi>v</mi></msub><mo>=</mo><mrow></mrow></mtd><mtd columnalign="left" style="text-align: left"><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>−</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>e</mi><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>F</mi><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mn>1</mn><mo>−</mo><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">⌊</mo><msub><mi>N</mi><mn>0</mn></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">⌋</mo></mrow><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>b</mi><mi>v</mi></msub><mo>=</mo><mrow></mrow></mtd><mtd columnalign="left" style="text-align: left"><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>−</mo><msup><mi>p</mi><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>e</mi><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>p</mi><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>F</mi><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mn>1</mn><mo>−</mo><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">⌊</mo><msub><mi>N</mi><mn>0</mn></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">⌋</mo></mrow><mo>−</mo><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>1</mn><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+a_v={}&amp;[1-\bar p^{h(v)}]e_{N_0-s(v)}(p)
++\bar p^{h(v)}F_{N_0-1-h(v)}
+\left(\left\lfloor N_0/2\right\rfloor;p\right),\\
+b_v={}&amp;[1-p^{h(v)}]e_{N_0-s(v)}(p)
++p^{h(v)}F_{N_0-1-h(v)}
+\left(\left\lfloor N_0/2\right\rfloor-h(v)-1;p\right).
+\end{aligned}
+\tag{22}
+</annotation></semantics></math></p>
+<p>The symbols
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>v</mi></msub><annotation encoding="application/x-tex">a_v</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>v</mi></msub><annotation encoding="application/x-tex">b_v</annotation></semantics></math>
+refer to wrong-emission/correct-blocking and
+correct-emission/wrong-blocking, respectively; they are not the ring
+connection radius.</p>
+<p><strong>Theorem 2 (Exact single-attacker risk).</strong> Under the
+preceding unique-route and parity assumptions, the exact worst-case WPEF
+error over the eight mechanisms is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mo>max</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ϕ</mi><mi mathvariant="normal">W</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>max</mo><mrow><mo stretchy="true" form="prefix">{</mo><munder><mo>max</mo><mrow><mi>g</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow></munder><msub><mi>e</mi><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><msub><mi>s</mi><mi>g</mi></msub></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><munder><mo>max</mo><mrow><mi>v</mi><mo>∈</mo><msub><mi>B</mi><mi>T</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow></munder><msub><mi>a</mi><mi>v</mi></msub><mo>,</mo><munder><mo>max</mo><mrow><mi>v</mi><mo>∈</mo><msub><mi>B</mi><mi>T</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow></munder><msub><mi>b</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">}</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R_{\max}(\phi_{\mathrm W})
+=
+\max\left\{
+\max_{g\in[q]}e_{N_0-s_g}(p),
+\max_{v\in B_T\setminus\{f\}}a_v,
+\max_{v\in B_T\setminus\{f\}}b_v
+\right\}.
+\tag{23}
+</annotation></semantics></math></p>
+<p><em>Proof.</em> Under wrong-emission/correct-blocking at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+any correct proper descendant is blocked on its unique route and flags
+the attacked branch. This event has probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">1-\bar p^{h(v)}</annotation></semantics></math>.
+Erasure leaves the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">N_0-s(v)</annotation></semantics></math>
+honest observations outside that branch, including the sink, and their
+error is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e_{N_0-s(v)}(p)</annotation></semantics></math>.</p>
+<p>Otherwise all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h(v)</annotation></semantics></math>
+descendants are wrong, an event of probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">\bar p^{h(v)}</annotation></semantics></math>.
+Their tokens and the wrong token of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+are forwarded, and all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mn>0</mn></msub><annotation encoding="application/x-tex">N_0</annotation></semantics></math>
+tokens arrive. Of the remaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mn>1</mn><mo>−</mo><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">N_0-1-h(v)</annotation></semantics></math>
+independent honest observations, at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><msub><mi>N</mi><mn>0</mn></msub><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor N_0/2\rfloor</annotation></semantics></math>
+may be correct for majority to fail. This proves the expression for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>v</mi></msub><annotation encoding="application/x-tex">a_v</annotation></semantics></math>.</p>
+<p>For correct-emission/wrong-blocking, no erasure occurs exactly when
+all descendants are correct. There are then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h(v)+1</annotation></semantics></math>
+fixed correct votes, including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+so the error threshold for the remaining honest observations decreases
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h(v)+1</annotation></semantics></math>.
+This gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>v</mi></msub><annotation encoding="application/x-tex">b_v</annotation></semantics></math>.</p>
+<p>Wrong-emission/wrong-blocking and correct-emission/correct-blocking
+suppress the attacker’s own token, and boundary-cut also prevents it
+reaching the sink. Each causes its entire witness branch to be erased.
+Their risks are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e_{N_0-s(v)}(p)</annotation></semantics></math>.
+For pass-all, every root branch contains an expected leaf with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h(v)=0</annotation></semantics></math>,
+so the wrong and correct pass-all risks already occur among the values
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>v</mi></msub><annotation encoding="application/x-tex">a_v</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>v</mi></msub><annotation encoding="application/x-tex">b_v</annotation></semantics></math>.
+An empty or out-of-range attack produces the clean risk, no larger than
+the displayed maximum. Every branch erasure and every effective location
+in (23) is attainable by an action. Thus (23) is an equality.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The theorem is an exact algorithm-risk result, not a general
+minimax-optimality statement. Odd
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mn>0</mn></msub><annotation encoding="application/x-tex">N_0</annotation></semantics></math>
+eliminates ties in the all-arrive branch; even
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mn>0</mn></msub><annotation encoding="application/x-tex">N_0</annotation></semantics></math>
+requires the appropriate additional tie terms. Ties after erasure are
+already included through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>−</mo><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><annotation encoding="application/x-tex">e_{N_0-s(v)}</annotation></semantics></math>.</p>
+<h3 id="b.-ring-lattice-specialization">B. Ring-Lattice
+Specialization</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mrow><mi>n</mi><mo>,</mo><mi>a</mi></mrow></msub><annotation encoding="application/x-tex">R_{n,a}</annotation></semantics></math>
+be the graph on vertices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,\ldots,n-1\}</annotation></semantics></math>
+connecting each vertex to its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+nearest vertices on each side, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>a</mi><mo>&lt;</mo><mi>n</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1\le a&lt;n/2</annotation></semantics></math>
+and sink
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>.
+Its degree is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi></mrow><annotation encoding="application/x-tex">2a</annotation></semantics></math>,
+not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.
+Its clean expected-source count is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>=</mo><mo>min</mo><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>,</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>a</mi><mi>T</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+N_0=\min\{n,1+2aT\}.
+\tag{24}
+</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn><mi>a</mi><mi>T</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge2aT+1</annotation></semantics></math>,
+a convenient witness partition uses the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi></mrow><annotation encoding="application/x-tex">2a</annotation></semantics></math>
+groups</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>σ</mi><mo>,</mo><mi>r</mi></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>+</mo><mi>b</mi><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>b</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>T</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>σ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>+</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>r</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+P_{\sigma,r}=\{\sigma(r+ba):b=0,\ldots,T-1\}\pmod n,
+\qquad
+\sigma\in\{-1,+1\},\quad r\in\{1,\ldots,a\}.
+\tag{25}
+</annotation></semantics></math></p>
+<p>Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+indicates direction,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+is a residue representative, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+indexes positions along a group. The route
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>σ</mi><mi>r</mi><mo>,</mo><mi>σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>+</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">0,\sigma r,\sigma(r+a),\ldots</annotation></semantics></math>
+is a shortest witness. Each group has size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>e</mi></msub><annotation encoding="application/x-tex">r_e</annotation></semantics></math>
+groups are erased, where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>e</mi></msub><annotation encoding="application/x-tex">r_e</annotation></semantics></math>
+is a realized erasure count, then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mn>1</mn><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>a</mi><mo>−</mo><msub><mi>r</mi><mi>e</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>Λ</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo>−</mo><msub><mi>r</mi><mi>e</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">
+K=1+(2a-r_e)T,
+\qquad
+\Lambda=(m-r_e)T
+\tag{26}
+</annotation></semantics></math></p>
+<p>for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>&lt;</mo><mn>2</mn><mi>a</mi></mrow><annotation encoding="application/x-tex">m&lt;2a</annotation></semantics></math>.
+Substituting these quantities into (14) gives the balanced-arm risk
+bound. When the ring is saturated, truncate the groups at the shortest
+signed displacement and assign an even-ring antipode to a fixed side.
+The general unequal-group theorem remains applicable.</p>
+<p>For the pure ring
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a=1</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn><mi>T</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge2T+1</annotation></semantics></math>,
+take
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>T</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">j\in\{1,\ldots,T\}</annotation></semantics></math>
+to be the distance of the attacker on either side. Equation (23)
+becomes</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>a</mi><mi>j</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>T</mi><mo>−</mo><mi>j</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>e</mi><mrow><mi>T</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>T</mi><mo>−</mo><mi>j</mi></mrow></msup><msub><mi>F</mi><mrow><mi>T</mi><mo>+</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>b</mi><mi>j</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>p</mi><mrow><mi>T</mi><mo>−</mo><mi>j</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>e</mi><mrow><mi>T</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>p</mi><mrow><mi>T</mi><mo>−</mo><mi>j</mi></mrow></msup><msub><mi>F</mi><mrow><mi>T</mi><mo>+</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>R</mi><mo>max</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ϕ</mi><mi mathvariant="normal">W</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mo>max</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mrow><mi>T</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><munder><mo>max</mo><mi>j</mi></munder><msub><mi>a</mi><mi>j</mi></msub><mo>,</mo><munder><mo>max</mo><mi>j</mi></munder><msub><mi>b</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+a_j&amp;=(1-\bar p^{T-j})e_{T+1}(p)
++\bar p^{T-j}F_{T+j}(T;p),\\
+b_j&amp;=(1-p^{T-j})e_{T+1}(p)
++p^{T-j}F_{T+j}(j-1;p),\\
+R_{\max}(\phi_{\mathrm W})&amp;=
+\max\{e_{T+1}(p),\max_j a_j,\max_j b_j\}.
+\end{aligned}
+\tag{27}
+</annotation></semantics></math></p>
+<p>This formula covers arbitrary finite
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+in that region. It also shows why checking only a sink-adjacent attack
+is insufficient: location enters through both the number of conditioned
+descendants and the number of remaining independent votes.</p>
+<h3 id="c.-a-strict-countprovenance-separation">C. A Strict
+Count–Provenance Separation</h3>
+<p>The information hierarchy becomes substantive when an attainable WPEF
+risk lies below a lower bound for every Count detector. Define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mn>4</mn><msup><mi>p</mi><mn>3</mn></msup><mo>+</mo><mn>3</mn><msup><mi>p</mi><mn>4</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mfrac><mn>9</mn><mn>10</mn></mfrac><mi>p</mi><mo>−</mo><mfrac><mn>9</mn><mn>10</mn></mfrac><msup><mi>p</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+L(p)=1-4p^3+3p^4,
+\qquad
+G(p)=(1-p)\left(1+\frac9{10}p-\frac9{10}p^3\right).
+\tag{28}
+</annotation></semantics></math></p>
+<p><strong>Corollary 2 (Two-round minimax attainment and strict Count
+separation).</strong> Consider
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mrow><mi>n</mi><mo>,</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">R_{n,1}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">n\ge5</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">T=2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math>,
+and clean budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mn>0</mn></msub><mo>=</mo><msub><mi>e</mi><mn>5</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\beta_0=e_5(p)</annotation></semantics></math>.
+Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mo>max</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ϕ</mi><mi mathvariant="normal">W</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mi>V</mi><mi mathvariant="normal">F</mi><mi mathvariant="normal">r</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>β</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mi>V</mi><mi mathvariant="normal">F</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>β</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mi>V</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">r</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>β</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mi>V</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">p</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>β</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R_{\max}(\phi_{\mathrm W})
+=V_{\mathrm F}^{\mathrm r}(\beta_0)
+=V_{\mathrm F}^{\mathrm p}(\beta_0)
+=V_{\mathrm I}^{\mathrm r}(\beta_0)
+=V_{\mathrm I}^{\mathrm p}(\beta_0)
+=L(p).
+\tag{29}
+</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.7</mn><mo>,</mo><mn>0.8</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">p\in[0.7,0.8]</annotation></semantics></math>,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>V</mi><mi mathvariant="normal">C</mi><mi mathvariant="normal">r</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>β</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>10</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mn>21</mn><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><mn>10</mn><mi>p</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+V_{\mathrm C}^{\mathrm r}(\beta_0)\ge G(p),
+\qquad
+G(p)-L(p)
+=\frac{p(1-p)}{10}(21p^2-10p-1)&gt;0.
+\tag{30}
+</annotation></semantics></math></p>
+<p>In particular, a deterministic WPEF rule is strictly better than
+every randomized Count rule in this interval.</p>
+<p><em>Proof.</em> Specializing (27) to two rounds gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(p)</annotation></semantics></math>;
+Appendix B verifies all action branches. Appendix A shows that a
+zero-clean-degradation rule must equal the unique clean Bayes decision
+on every positive-probability, non-tie clean record. All five-label
+patterns have positive clean probability, and there is no five-vote tie.
+A wrong-emission/pass-all action preserves the normal arrival pattern.
+Any feasible rule, including a randomized Full detector, must therefore
+incur</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Pr</mo><mo stretchy="false" form="prefix">{</mo><mo>Bin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>,</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Pr\{\operatorname{Bin}(4,p)\le2\}=L(p).
+\tag{31}
+</annotation></semantics></math></p>
+<p>WPEF attains this lower bound. Its two-round flags depend only on
+missing identities, so the same rule is ID-measurable. This proves
+(29).</p>
+<p>For (30), mix a wrong-emission/correct-blocking attack at source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math>
+with weight
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mi>/</mi><mn>10</mn></mrow><annotation encoding="application/x-tex">9/10</annotation></semantics></math>
+and a boundary-cut attack at source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">+2</annotation></semantics></math>
+with weight
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>10</mn></mrow><annotation encoding="application/x-tex">1/10</annotation></semantics></math>.
+Appendix B minimizes the mixture risk over all Count decisions while
+enforcing their clean-support decisions. The resulting lower bound is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G(p)</annotation></semantics></math>.
+A worst-action risk is no smaller than its average under this legal
+mixture, giving (30).
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.7</mn></mrow><annotation encoding="application/x-tex">p=0.7</annotation></semantics></math>,
+the feasible WPEF risk is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.3483</mn><annotation encoding="application/x-tex">0.3483</annotation></semantics></math>
+and the Count lower bound is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.39639</mn><annotation encoding="application/x-tex">0.39639</annotation></semantics></math>,
+a certified gap of at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.04809</mn><annotation encoding="application/x-tex">0.04809</annotation></semantics></math>.
+The latter number is a lower bound, not a claimed exact Count optimum.
+The claim concerns this specific horizon and budget; it is not a
+universal ordering of WPEF and Count.</p>
+<h3 id="d.-when-arrival-times-add-no-observation-content">D. When
+Arrival Times Add No Observation Content</h3>
+<p><strong>Proposition 2 (Short-ring time reconstruction).</strong> On
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mrow><mi>n</mi><mo>,</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">R_{n,1}</annotation></semantics></math>,
+if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>≤</mo><mo stretchy="false" form="prefix">⌊</mo><mi>n</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">T\le\lfloor n/2\rfloor</annotation></semantics></math>,
+every arrived source satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>j</mi></msub><mo>=</mo><msub><mi>d</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\tau_j=d_G(j,f)</annotation></semantics></math>.
+Under the Full definition (3), ID and Full are therefore
+deterministically interconvertible.</p>
+<p><em>Proof.</em> The two simple ring paths from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+have lengths
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">n-d</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><msub><mi>d</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mo stretchy="false" form="prefix">⌊</mo><mi>n</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">d=d_G(j,f)\le\lfloor n/2\rfloor</annotation></semantics></math>.
+If they differ, the longer length is greater than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>n</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor n/2\rfloor</annotation></semantics></math>
+and cannot meet the deadline. If they tie, both lengths equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n/2</annotation></semantics></math>.
+Static token-wise filtering can remove an allowed route but cannot cause
+a later transmission to become allowed. An arrived token consequently
+has first-arrival time
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+in either case. Attach this known distance to each nonmissing ID record
+to reconstruct Full.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>This proposition does not imply that Time and Count are equivalent:
+per-round counts can retain distance grouping that total counts discard.
+It also does not extend by substituting a general lattice radius into a
+horizon bound. In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mrow><mn>12</mn><mo>,</mo><mn>2</mn></mrow></msub><annotation encoding="application/x-tex">R_{12,2}</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">T=3</annotation></semantics></math>,
+for example, the shortest route
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mspace width="-0.167em"></mspace><mo>→</mo><mspace width="-0.167em"></mspace><mn>2</mn><mspace width="-0.167em"></mspace><mo>→</mo><mspace width="-0.167em"></mspace><mn>0</mn></mrow><annotation encoding="application/x-tex">4\!\to\!2\!\to\!0</annotation></semantics></math>
+can be replaced by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mspace width="-0.167em"></mspace><mo>→</mo><mspace width="-0.167em"></mspace><mn>3</mn><mspace width="-0.167em"></mspace><mo>→</mo><mspace width="-0.167em"></mspace><mn>1</mn><mspace width="-0.167em"></mspace><mo>→</mo><mspace width="-0.167em"></mspace><mn>0</mn></mrow><annotation encoding="application/x-tex">4\!\to\!3\!\to\!1\!\to\!0</annotation></semantics></math>
+when a correct token is blocked at node
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>.
+All expected sources can still arrive while source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>
+is late. This distinguishes Full records with identical ID records, but
+does not by itself prove a strict minimax risk difference.</p>
+<p>WPEF consequently has two different relationships with the hierarchy.
+On short pure rings, it implements an ID-based advantage. On graphs
+admitting short detours, timing can produce additional group
+certificates. Whether those extra certificates improve the worst-case
+decision must be established separately; additional erasure can also
+discard useful evidence.</p>
+<h2 id="vi.-numerical-verification-and-algorithm-comparison">VI.
+Numerical Verification and Algorithm Comparison</h2>
+<h3 id="a.-what-is-and-is-not-evaluated">A. What Is and Is Not
+Evaluated</h3>
+<p>The numerical results available for this draft are independent
+finite-model checks supplied with the WPEF candidate and general-graph
+extension. The corresponding verification scripts were rerun for this
+draft. They are separate from the original research simulator. They
+neither establish held-out superiority nor certify compatibility with
+every historical encoder and tie-breaking implementation. No field data,
+timing benchmark, or large-network deployment result is reported.</p>
+<p>The principal methods are ordinary Majority, a Count-state minimax
+rule, and WPEF. Count denotes exact optimization over the representation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi mathvariant="normal">C</mi></msub><annotation encoding="application/x-tex">Z_{\mathrm C}</annotation></semantics></math>
+under the same attack library and clean budget, rather than a renamed
+majority rule. ID, Time, and Full optima are diagnostic information
+benchmarks. WPEF is a deployable structure-based rule whose risk is
+compared with those benchmarks only when the constraints and tie
+conventions match.</p>
+<p>A dense Count table has at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">2\binom{k+2}{2}</annotation></semantics></math>
+entries: the external counts sum to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>,
+and the factor two retains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>f</mi></msub><annotation encoding="application/x-tex">s_f</annotation></semantics></math>.
+Reachable-state storage or a derived threshold formula can reduce this
+number. The current exact Count design uses finite optimization over the
+decision table and attack risks; no general polynomial-time solution
+guarantee is assumed.</p>
+<p><strong>Table I. Fusion-layer computational comparison.</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Majority</th>
+<th>Count-state minimax</th>
+<th>WPEF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Retained decision information</td>
+<td>Sink and aggregate labels</td>
+<td>Sink, label counts, missing count</td>
+<td>Source–time associations compressed into group flags and sums</td>
+</tr>
+<tr class="even">
+<td>Offline design</td>
+<td>None</td>
+<td>Per-configuration exact risk optimization</td>
+<td>Fixed shortest-path partition</td>
+</tr>
+<tr class="odd">
+<td>Online fusion work</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>k</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k_{\mathrm{rec}})</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>k</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k_{\mathrm{rec}})</annotation></semantics></math>
+plus one lookup</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>k</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>+</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k_{\mathrm{rec}}+q)</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>Dynamic working state</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math>
+counters</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(q)</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>Static detector storage</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></td>
+<td>Up to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>k</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k^2)</annotation></semantics></math>
+table entries</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math>
+general-graph maps; arithmetic maps on rings</td>
+</tr>
+<tr class="even">
+<td>Needs the accuracy to execute</td>
+<td>No</td>
+<td>Its optimized table depends on the design model</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Optimality statement</td>
+<td>Baseline only</td>
+<td>Within the specified Count problem if solved exactly</td>
+<td>Corollary 2 only; otherwise Theorems 1 and 2</td>
+</tr>
+</tbody>
+</table>
+<p>These costs exclude the common protocol’s source authentication and
+duplicate handling. WPEF is not asymptotically faster than Majority. Its
+computational claim is that structural defense can be implemented at the
+same linear processing order without learned source parameters.</p>
+<h3 id="b.-exact-checks-of-the-general-certificate">B. Exact Checks of
+the General Certificate</h3>
+<p>The general-graph verification uses seven fixed graph shapes at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0.6</mn><mo>,</mo><mn>0.7</mn><mo>,</mo><mn>0.8</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">p\in\{0.6,0.7,0.8\}</annotation></semantics></math>,
+for 21 configurations. It enumerates 1,584 nonempty placement–mechanism
+actions and 74,496 action/sample conditions. All witness-inclusion and
+residual-budget assertions pass. The conditional bound (14) passes at
+all 1,776 positive-probability action/erasure conditions; the exact
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">r=m</annotation></semantics></math>
+equality passes at 606 such conditions. For the four tree shapes, the
+exact formula (23) agrees with complete enumeration in all 12
+accuracy/configuration combinations.</p>
+<p>Table II reports the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.7</mn></mrow><annotation encoding="application/x-tex">p=0.7</annotation></semantics></math>
+subset. All vertices are normally reachable at the listed horizon.
+Branch sizes refer to the fixed BFS partition, not optimized
+partitions.</p>
+<p><strong>Table II. Independent general-graph exact verification at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.7</mn></mrow><annotation encoding="application/x-tex">p=0.7</annotation></semantics></math>.</strong></p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 13%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Graph</th>
+<th style="text-align: right;">Nodes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math></th>
+<th style="text-align: right;">Horizon
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math></th>
+<th style="text-align: right;">Budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math></th>
+<th>Branch sizes</th>
+<th style="text-align: right;">Exact WPEF worst error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Star</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1,1,1,1,1,1</annotation></semantics></math></td>
+<td style="text-align: right;">0.255690</td>
+</tr>
+<tr class="even">
+<td>Balanced binary tree</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3,3</annotation></semantics></math></td>
+<td style="text-align: right;">0.264951</td>
+</tr>
+<tr class="odd">
+<td>Unbalanced tree</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">4,1,1</annotation></semantics></math></td>
+<td style="text-align: right;">0.292734</td>
+</tr>
+<tr class="even">
+<td>Chain rooted at an endpoint</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>6</mn><annotation encoding="application/x-tex">6</annotation></semantics></math></td>
+<td style="text-align: right;">0.351534</td>
+</tr>
+<tr class="odd">
+<td>Two-by-three grid</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">4,1</annotation></semantics></math></td>
+<td style="text-align: right;">0.451200</td>
+</tr>
+<tr class="even">
+<td>Cycle</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3,3</annotation></semantics></math></td>
+<td style="text-align: right;">0.292734</td>
+</tr>
+<tr class="odd">
+<td>Crosslinked graph</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3,3</annotation></semantics></math></td>
+<td style="text-align: right;">0.471780</td>
+</tr>
+</tbody>
+</table>
+<p>The chain, grid, and crosslinked cases use budgets at the sink-degree
+boundary. They test the general statements outside the preferred
+subcritical ring regime; they are not evidence that the same guarantee
+is uniformly informative below or above that boundary. Comparisons
+across this table also change topology, horizon, and sometimes budget.
+They do not isolate a causal effect of branch balance.</p>
+<p>The exact edge lists and deterministic traversal order are contained
+in the verification package. All probabilities use rational arithmetic.
+These finite checks provide implementation-level support for the stated
+mathematical identities, not a statistical confidence interval or proof
+over all graphs.</p>
+<h3 id="c.-ring-checks-and-tie-conventions">C. Ring Checks and Tie
+Conventions</h3>
+<p>A separate ring check compares an event-driven forwarding
+reconstruction with a graph-distance reconstruction in 1,600
+action/sample conditions; their terminal records agree and the group
+certificate passes. Equation (27) agrees with complete enumeration for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">T\in\{1,2,3,4\}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn><mi>T</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=2T+1</annotation></semantics></math>,
+and the same three accuracy values, giving 12 configurations.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">n=8</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a=m=1</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.7</mn></mrow><annotation encoding="application/x-tex">p=0.7</annotation></semantics></math>,
+the supplied candidate enumeration gives the following results over all
+56 nonempty actions. WPEF uses shortest signed-displacement groups, with
+an even antipode assigned clockwise.</p>
+<p><strong>Table III. Supplied ring-candidate exact risks, with tie
+conventions separated.</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Horizon</th>
+<th style="text-align: right;">Pure WPEF: sink-following ties</th>
+<th style="text-align: right;">WPEF with historical fair ties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.34830000</td>
+<td style="text-align: right;">0.34830000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.29273400</td>
+<td style="text-align: right;">0.29273400</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.26032050</td>
+<td style="text-align: right;">0.27652725</td>
+</tr>
+</tbody>
+</table>
+<p>The fourth-round case has an even normal source count and is
+evaluated by enumeration, not by the odd-count formula (23). The two
+columns are deliberately kept separate. A difference under attack need
+not vanish merely because the two conventions have equal clean risk.</p>
+<p>For these three configurations, a missingness-only version of the
+same group-erasure rule has the same pure risk as the time-aware
+version. The observed performance cannot therefore be credited to an
+incremental timing benefit. The two-round result does, however, have the
+independent Count-class lower bound from Corollary 2. At three rounds,
+the worst effective pure-ring location is distance two; using only a
+sink-adjacent action would miss the reported maximum.</p>
+<h3
+id="d.-historical-information-benchmarks-and-remaining-comparisons">D.
+Historical Information Benchmarks and Remaining Comparisons</h3>
+<p>The existing project information-ablation summary contains 72
+configured cells, of which 71 are complete and one reaches a compute
+limit. Among completed cells, the reported strict improvements are 29/71
+for ID over Count, 2/71 for Time over Count, and 0/71 for Full over the
+better of ID and Time. These are historical results of the frozen
+information-level optimization, not evaluations of WPEF. The original
+processed tables and decoder definitions must be checked before
+combining them with the new algorithm’s results.</p>
+<p>A complete performance section still requires matched
+Majority/Count/WPEF evaluation in the original simulator, per-detector
+worst-action searches, and independent larger-configuration assessment.
+A timing ablation must separate the value of additional certificates
+from the possible cost of erasing more evidence. Because these results
+are not yet available, the present draft does not report a WPEF win
+rate, a general runtime speedup, or a completed field-validation
+claim.</p>
+<h2 id="vii.-discussion">VII. Discussion</h2>
+<h3 id="a.-resilience-not-universal-message-recovery">A. Resilience, Not
+Universal Message Recovery</h3>
+<p>The certificate establishes that a flagged witness group contains at
+least one compromised node. It does not establish that all preserved
+messages are authentic measurements or that every attacker is detected.
+Authentic source labels can still be incorrect because sensing is noisy.
+Even when every attacked group is removed, the remaining error is the
+honest-majority error, not zero.</p>
+<p>The trusted sink also changes the meaning of resilience relative to a
+consensus-threshold formulation. A local-only detector always retains
+one noisy but uncompromised observation. The question is therefore
+whether a defense maintains network information value while limiting
+worst-case error, not whether an attacker can eliminate all possibility
+of a correct decision. The clean budget in (6) makes that distinction
+operational.</p>
+<h3 id="b.-conservatism-and-dependence-on-the-witness-partition">B.
+Conservatism and Dependence on the Witness Partition</h3>
+<p>Large root branches make erasure expensive. A different fixed
+shortest-path tree can change branch sizes without changing the graph or
+flooding process. The current algorithm uses a predetermined
+construction and does not optimize over trees. Its guarantee applies to
+the selected partition; it is not a statement that BFS tie-breaking is
+performance optimal.</p>
+<p>Likewise, the residue-based ring grouping should not be replaced
+silently by an arbitrary BFS output during reproduction. Both are valid
+witness partitions, but their risks may differ. A future
+partition-design method would be a new algorithmic component with its
+own computational and statistical costs.</p>
+<h3 id="c.-limits-of-timing-certification">C. Limits of Timing
+Certification</h3>
+<p>The soundness implication in (15) depends on deterministic normal
+delivery. Random loss, queueing, clock errors, and untrusted topology
+can flag a fully loyal group. A tolerance or stochastic delivery model
+might address these effects, but it would change the certificate and
+require a new analysis. The present results do not justify adding a
+timing threshold while retaining the same theorem.</p>
+<p>Full is defined here by exact first-arrival records, although WPEF
+only needs an on-time/late distinction. The theory does not say that
+more precise timestamps always improve the implemented rule. It
+separates observation redundancy, additional structural certificates,
+and strict decision improvement; these are different claims.</p>
+<h3 id="d.-scope-of-minimax-and-of-the-evidence">D. Scope of Minimax and
+of the Evidence</h3>
+<p>Corollary 2 proves constrained pure minimax attainment in one
+explicit family. Theorem 2 gives exact WPEF risk on a larger
+unique-route family but does not identify its global minimax detector.
+Theorem 1 is broader in topology, but its probability bound depends on
+the specified noninteracting attack semantics. None of these results
+establishes a guarantee against unrestricted Byzantine behavior, source
+impersonation, arbitrary relay rewriting, or mobile compromised
+sets.</p>
+<p>The independent checks support the equations under those assumptions.
+They do not replace a matched benchmark or establish novelty against
+every prior publication. In particular, the contribution should be
+distinguished from audit-bit and trust-assisted defenses [5], [6]
+through the network-derived certificate, conditional-risk analysis, and
+information-class separation, rather than by claiming that
+metadata-based filtering has not been studied.</p>
+<h2 id="viii.-conclusion">VIII. Conclusion</h2>
+<p>We studied finite-horizon binary sensing at a trusted sink under
+source falsification and selective relay censoring. WPEF uses
+shortest-path witness groups to turn missing or late evidence into a
+group-level attack certificate, then erases flagged groups before
+majority fusion. The analysis yields a residual-budget guarantee and a
+conditional risk bound that does not assume all retained observations
+are unbiased. Unique deadline routes permit an exact single-attacker
+formula, while a two-round ring admits pure minimax attainment and a
+strict Count–ID separation under a common clean-performance constraint.
+These results connect the information hierarchy to an executable
+detector rather than only to nested decision classes. The algorithm
+retains linear online processing without attack-distribution training.
+Completing matched simulator and broader network validation is necessary
+before drawing general performance conclusions.</p>
+<h2 id="appendix-a.-clean-risk-rigidity">Appendix A. Clean-Risk
+Rigidity</h2>
+<p>For a finite observation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>
+and clean action
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+define the joint masses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>x</mi><mo>,</mo><mn>0</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo>,</mo><mi>Z</mi><mo>=</mo><mi>z</mi><mo>∣</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h_{x,0}(z)=\Pr(X=x,Z=z\mid0)</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>+</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">x\in\{-1,+1\}</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">d(z)\in[0,1]</annotation></semantics></math>
+be the probability of deciding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mn>0</mn></msub><annotation encoding="application/x-tex">d_0</annotation></semantics></math>
+be a clean Bayes rule. At a non-tie state,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mn>0</mn></msub><annotation encoding="application/x-tex">d_0</annotation></semantics></math>
+selects the larger of the two joint masses. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>R</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>R</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>d</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><munder><mo>∑</mo><mi>z</mi></munder><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>h</mi><mrow><mi>−</mi><mn>1</mn><mo>,</mo><mn>0</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>h</mi><mrow><mi>+</mi><mn>1</mn><mo>,</mo><mn>0</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>d</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><munder><mo>∑</mo><mi>z</mi></munder><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>h</mi><mrow><mi>+</mi><mn>1</mn><mo>,</mo><mn>0</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>h</mi><mrow><mi>−</mi><mn>1</mn><mo>,</mo><mn>0</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>d</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+R_0(d)-R_0(d_0)
+&amp;=\sum_z[h_{-1,0}(z)-h_{+1,0}(z)][d(z)-d_0(z)]\\
+&amp;=\sum_z|h_{+1,0}(z)-h_{-1,0}(z)|\,|d(z)-d_0(z)|.
+\end{aligned}
+\tag{32}
+</annotation></semantics></math></p>
+<p>The second equality follows state by state: the Bayes decision is one
+when the first mass dominates and zero when the second dominates; ties
+contribute zero. Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><msub><mi>R</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>d</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">R_0(d)\le R_0(d_0)</annotation></semantics></math>
+forces agreement on every non-tie clean-support state. For an odd number
+of homogeneous observations, the likelihood ratio is a positive power of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p/(1-p)</annotation></semantics></math>
+determined by the vote imbalance, so majority is unique on every clean
+record. This proves the clean-support claim used in (31). It does not
+force a particular action on zero-probability clean records or posterior
+ties.</p>
+<h2
+id="appendix-b.-two-round-attainment-and-the-count-lower-bound">Appendix
+B. Two-Round Attainment and the Count Lower Bound</h2>
+<h3 id="a.-verification-of-the-attainable-risk">A. Verification of the
+Attainable Risk</h3>
+<p>The two witness groups on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mrow><mi>n</mi><mo>,</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">R_{n,1}</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">T=2</annotation></semantics></math>
+contain sources
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{-1,-2\}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>+</mi><mn>1</mn><mo>,</mo><mi>+</mi><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{+1,+2\}</annotation></semantics></math>.
+Define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>3</mn></msub><mo>=</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>3</mn></msup><mo>+</mo><mn>3</mn><mi>p</mi><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>h</mi><mn>4</mn></msub><mo>=</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>4</mn></msup><mo>+</mo><mn>4</mn><mi>p</mi><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>3</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><mover><mi>p</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+e_3=\bar p^3+3p\bar p^2,
+\qquad
+h_4=\bar p^4+4p\bar p^3,
+\qquad \bar p=1-p.
+\tag{33}
+</annotation></semantics></math></p>
+<p>Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>3</mn></msub><annotation encoding="application/x-tex">e_3</annotation></semantics></math>
+is the error of three honest votes and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mn>4</mn></msub><annotation encoding="application/x-tex">h_4</annotation></semantics></math>
+is the five-vote error with one fixed correct vote and four honest
+votes. For an adjacent wrong-emission/correct-blocking node, a correct
+distance-two observation triggers erasure, whereas a wrong distance-two
+observation yields two fixed wrong votes. Hence its risk is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><msub><mi>e</mi><mn>3</mn></msub><mo>+</mo><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>p</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mn>4</mn><msup><mi>p</mi><mn>3</mn></msup><mo>+</mo><mn>3</mn><msup><mi>p</mi><mn>4</mn></msup><mo>=</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+p e_3+\bar p(1-p^3)=1-4p^3+3p^4=L(p).
+\tag{34}
+</annotation></semantics></math></p>
+<p>The mirrored correct-emission/wrong-blocking action has risk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">‾</mo></mover><msub><mi>e</mi><mn>3</mn></msub><mo>+</mo><mi>p</mi><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>3</mn></msup><mo>=</mo><msub><mi>h</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">\bar p e_3+p\bar p^3=h_4</annotation></semantics></math>.
+For a distance-two attacker, these two actions reduce to the pass-all
+risks
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(p)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mn>4</mn></msub><annotation encoding="application/x-tex">h_4</annotation></semantics></math>.
+Self-blocking and boundary-cut actions yield
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>3</mn></msub><annotation encoding="application/x-tex">e_3</annotation></semantics></math>.
+Finally,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>e</mi><mn>3</mn></msub><mo>=</mo><mn>3</mn><msup><mi>p</mi><mn>2</mn></msup><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>e</mi><mn>3</mn></msub><mo>−</mo><msub><mi>h</mi><mn>4</mn></msub><mo>=</mo><mn>3</mn><msup><mi>p</mi><mn>2</mn></msup><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+L(p)-e_3=3p^2\bar p^2,
+\qquad
+e_3-h_4=3p^2\bar p^2.
+\tag{35}
+</annotation></semantics></math></p>
+<p>Every effective placement and mechanism therefore has risk at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(p)</annotation></semantics></math>,
+and a wrong pass-all action attains it. Out-of-range actions are clean.
+This verifies the attainable side of (29).</p>
+<h3 id="b.-a-legal-mixture-lower-bound-for-count">B. A Legal Mixture
+Lower Bound for Count</h3>
+<p>Use the mixture in Corollary 2 and set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mn>9</mn><mi>/</mi><mn>10</mn></mrow><annotation encoding="application/x-tex">w=9/10</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+be the event that exactly one expected external token is missing, and
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S\in\{0,1,2,3\}</annotation></semantics></math>
+count arrived external labels agreeing with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>f</mi></msub><annotation encoding="application/x-tex">s_f</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>.
+Define the events
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mo>+</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>X</mi><mo>=</mo><msub><mi>s</mi><mi>f</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">H_+=\{X=s_f\}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mo>−</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>X</mi><mo>≠</mo><msub><mi>s</mi><mi>f</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">H_-=\{X\ne s_f\}</annotation></semantics></math>.
+For integers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N\ge0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>,
+define the binomial mass</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">b</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>;</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>N</mi><mi>s</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>t</mi><mi>s</mi></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>N</mi><mo>−</mo><mi>s</mi></mrow></msup><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mn>0</mn><mo>≤</mo><mi>s</mi><mo>≤</mo><mi>N</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mtext mathvariant="normal">otherwise</mtext><mo>,</mo></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+\mathrm b_N(s;t)=
+\begin{cases}
+\binom Ns t^s(1-t)^{N-s},&amp;0\le s\le N,\\
+0,&amp;\text{otherwise},
+\end{cases}
+\tag{36}
+</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">t\in[0,1]</annotation></semantics></math>
+is a success probability. The mixture joint masses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>s</mi></msub><mo>=</mo><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>H</mi><mo>+</mo></msub><mo>,</mo><mi>S</mi><mo>=</mo><mi>s</mi><mo>,</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">u_s=\Pr(H_+,S=s,D)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>s</mi></msub><mo>=</mo><mo>Pr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>H</mi><mo>−</mo></msub><mo>,</mo><mi>S</mi><mo>=</mo><mi>s</mi><mo>,</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v_s=\Pr(H_-,S=s,D)</annotation></semantics></math>
+are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>u</mi><mi>s</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>w</mi><msup><mi>p</mi><mn>2</mn></msup><mspace width="0.167em"></mspace><msub><mi mathvariant="normal">b</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>p</mi><mspace width="0.167em"></mspace><msub><mi mathvariant="normal">b</mi><mn>3</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>;</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>v</mi><mi>s</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>w</mi><mi>p</mi><mover><mi>p</mi><mo accent="true">‾</mo></mover><mspace width="0.167em"></mspace><msub><mi mathvariant="normal">b</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo>;</mo><mover><mi>p</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mover><mi>p</mi><mo accent="true">‾</mo></mover><mspace width="0.167em"></mspace><msub><mi mathvariant="normal">b</mi><mn>3</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>;</mo><mover><mi>p</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+u_s&amp;=wp^2\,\mathrm b_2(s;p)+(1-w)p\,\mathrm b_3(s;p),\\
+v_s&amp;=wp\bar p\,\mathrm b_2(s-1;\bar p)+(1-w)\bar p\,\mathrm b_3(s;\bar p).
+\end{aligned}
+\tag{37}
+</annotation></semantics></math></p>
+<p>In the first action, the distance-two token is missing exactly when
+it is correct. The adjacent wrong token agrees with the sink only on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mo>−</mo></msub><annotation encoding="application/x-tex">H_-</annotation></semantics></math>.
+In the second action, the remaining three external tokens are honest.
+These observations give (37). State-flip symmetry splits each mass
+equally between the two absolute values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>f</mi></msub><annotation encoding="application/x-tex">s_f</annotation></semantics></math>,
+so retaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>f</mi></msub><annotation encoding="application/x-tex">s_f</annotation></semantics></math>
+does not change the following pointwise minimization.</p>
+<p>The differences are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>u</mi><mn>0</mn></msub><mo>−</mo><msub><mi>v</mi><mn>0</mn></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><mi>p</mi><mover><mi>p</mi><mo accent="true">‾</mo></mover></mrow><mn>10</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mn>7</mn><mi>p</mi><mo>−</mo><mn>9</mn><msup><mi>p</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>u</mi><mn>1</mn></msub><mo>−</mo><msub><mi>v</mi><mn>1</mn></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>9</mn><mn>10</mn></mfrac><msup><mi>p</mi><mn>3</mn></msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>u</mi><mn>2</mn></msub><mo>−</mo><msub><mi>v</mi><mn>2</mn></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>9</mn><mn>10</mn></mfrac><msup><mi>p</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mfrac><mn>3</mn><mn>10</mn></mfrac><mi>p</mi><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>u</mi><mn>3</mn></msub><mo>−</mo><msub><mi>v</mi><mn>3</mn></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mn>10</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>p</mi><mn>4</mn></msup><mo>−</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>4</mn></msup><mo>−</mo><mn>9</mn><mi>p</mi><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+u_0-v_0&amp;=\frac{p\bar p}{10}(1+7p-9p^2),\\
+u_1-v_1&amp;=\frac9{10}p^3\bar p,\\
+u_2-v_2&amp;=\frac9{10}p^2(p^2-2\bar p^2)
++\frac3{10}p\bar p(p^2-\bar p^2),\\
+u_3-v_3&amp;=\frac1{10}(p^4-\bar p^4-9p\bar p^3).
+\end{aligned}
+\tag{38}
+</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>7</mn><mi>/</mi><mn>10</mn><mo>,</mo><mn>4</mn><mi>/</mi><mn>5</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">p\in[7/10,4/5]</annotation></semantics></math>,
+the factors satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>7</mn><mi>p</mi><mo>−</mo><mn>9</mn><msup><mi>p</mi><mn>2</mn></msup><mo>≥</mo><mn>21</mn><mi>/</mi><mn>25</mn></mrow><annotation encoding="application/x-tex">1+7p-9p^2\ge21/25</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup><mo>≥</mo><mn>31</mn><mi>/</mi><mn>100</mn></mrow><annotation encoding="application/x-tex">p^2-2\bar p^2\ge31/100</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup><mo>≥</mo><mn>2</mn><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">p^2-\bar p^2\ge2/5</annotation></semantics></math>.
+Also,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">p(1-p)^3</annotation></semantics></math>
+decreases on this interval, giving</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mn>4</mn></msup><mo>−</mo><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>4</mn></msup><mo>−</mo><mn>9</mn><mi>p</mi><msup><mover><mi>p</mi><mo accent="true">‾</mo></mover><mn>3</mn></msup><mo>≥</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>7</mn><mi>/</mi><mn>10</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup><mo>−</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>10</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup><mo>−</mo><mn>9</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>7</mn><mi>/</mi><mn>10</mn><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>10</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mo>=</mo><mfrac><mn>619</mn><mn>10000</mn></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+p^4-\bar p^4-9p\bar p^3
+\ge(7/10)^4-(3/10)^4-9(7/10)(3/10)^3
+=\frac{619}{10000}&gt;0.
+\tag{39}
+</annotation></semantics></math></p>
+<p>Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>s</mi></msub><mo>&gt;</mo><msub><mi>v</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">u_s&gt;v_s</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>.
+A randomized Count action on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+has minimal error mass
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>s</mi></msub><mo>min</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>u</mi><mi>s</mi></msub><mo>,</mo><msub><mi>v</mi><mi>s</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msub><mi>v</mi><mi>s</mi></msub><mo>=</mo><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mi>p</mi><mo>+</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_s\min\{u_s,v_s\}=\sum_s v_s=\bar p(wp+1-w)</annotation></semantics></math>.
+The all-arrive branch occurs only under the first action when the
+blocked-side distance-two token is wrong. Appendix A forces the
+five-vote majority decision there, with error mass
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>p</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">w\bar p(1-p^3)</annotation></semantics></math>.
+Consequently, every clean-feasible Count rule has worst-case risk at
+least</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>w</mi><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>p</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mi>p</mi><mo>+</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mfrac><mn>9</mn><mn>10</mn></mfrac><mi>p</mi><mo>−</mo><mfrac><mn>9</mn><mn>10</mn></mfrac><msup><mi>p</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+ w\bar p(1-p^3)+\bar p(wp+1-w)
+ &amp;=\bar p\left(1+\frac9{10}p-\frac9{10}p^3\right)\\
+ &amp;=G(p).
+\end{aligned}
+\tag{40}
+</annotation></semantics></math></p>
+<p>This is a lower bound from one fixed legal attack mixture; it need
+not be a least-favorable mixture. Subtracting the attainable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(p)</annotation></semantics></math>
+gives (30). The polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>21</mn><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><mn>10</mn><mi>p</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">21p^2-10p-1</annotation></semantics></math>
+is increasing on the interval and is at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>229</mn><mi>/</mi><mn>100</mn></mrow><annotation encoding="application/x-tex">229/100</annotation></semantics></math>,
+completing the strictness proof.</p>
+<h2 id="references">References</h2>
+<p>[1] H. Peng, Y. Li, and L. Jin, “Consensus resiliency of stochastic
+observation via ring lattices of sensors facing Byzantine attacks,” in
+<em>Proc. 62nd IEEE Conf. Decision and Control (CDC)</em>, 2023, doi:
+<strong>10.1109/CDC49753.2023.10383797</strong>. Publication record: <a
+href="https://ieeexplore.ieee.org/document/10383797/">Online</a>.</p>
+<p>[2] T. Tsao, R. Alexander, M. Dohler, V. Daza, A. Lozano, and M.
+Richardson, “A security threat analysis for the routing protocol for
+low-power and lossy networks (RPLs),” <strong>RFC 7416</strong>,
+Jan. 2015, doi: <strong>10.17487/RFC7416</strong>. <a
+href="https://www.rfc-editor.org/rfc/rfc7416.html">Online</a>.</p>
+<p>[3] B. Kailkhura, S. Brahma, and P. K. Varshney, “Data falsification
+attacks on consensus-based detection systems,” <em>IEEE Trans. Signal
+Inf. Process. Netw.</em>, vol. 3, no. 1, pp. 145–158, Mar. 2017, doi:
+<strong>10.1109/TSIPN.2016.2607119</strong>. Author preprint, under the
+title “Consensus based detection in the presence of data falsification
+attacks”: <a href="https://arxiv.org/abs/1504.03413">Online</a>.</p>
+<p>[4] B. Kailkhura, S. Brahma, B. Dulek, Y. S. Han, and P. K. Varshney,
+“Distributed detection in tree networks: Byzantines and mitigation
+techniques,” <em>IEEE Trans. Inf. Forensics Security</em>, vol. 10, no.
+7, pp. 1499–1512, 2015, doi: <strong>10.1109/TIFS.2015.2415757</strong>.
+Author preprint: <a
+href="https://arxiv.org/abs/1410.5904">Online</a>.</p>
+<p>[5] C. Quan, B. Geng, Y. S. Han, and P. K. Varshney, “Enhanced audit
+bit based distributed Bayesian detection in the presence of strategic
+attacks,” <em>IEEE Trans. Signal Inf. Process. Netw.</em>, vol. 8,
+pp. 49–62, 2022, doi: <strong>10.1109/TSIPN.2022.3141215</strong>.
+Author preprint: <a
+href="https://arxiv.org/abs/2109.13325">Online</a>.</p>
+<p>[6] M. Cavorsi, O. E. Akgün, M. Yemini, A. Goldsmith, and S. Gil,
+“Exploiting trust for resilient hypothesis testing with malicious
+robots,” <em>IEEE Trans. Robot.</em>, vol. 40, pp. 3514–3536, 2024, doi:
+<strong>10.1109/TRO.2024.3415235</strong>. Author preprint: <a
+href="https://arxiv.org/abs/2303.04075">Online</a>.</p>
+<p>[7] S. Dolev, O. Liba, and E. M. Schiller, “Self-stabilizing
+Byzantine resilient topology discovery and message delivery,” in
+<em>Networked Systems (NETYS)</em>, LNCS 7853, pp. 42–57, 2013, doi:
+<strong>10.1007/978-3-642-40148-0_4</strong>. Author preprint: <a
+href="https://arxiv.org/abs/1208.5620">Online</a>.</p>
+<p>[8] R. Sedgewick and K. Wayne, <em>Algorithms</em>, 4th
+ed. Addison-Wesley, 2011, Section 4.1, breadth-first paths.
+Author-maintained implementation and complexity documentation: <a
+href="https://algs4.cs.princeton.edu/41graph/BreadthFirstPaths.java.html">Online</a>.</p>
+<!-- Editorial provenance: This draft draws its new model-specific mathematics from WPEF_generalization_theory.md and the WPEF_candidate_audit README supplied in the conversation, and the two-round Count certificate from CDC23_信息层级主线与严格证明_v3.md. Those private development materials are documented in the companion note rather than presented as external peer-reviewed references. -->
+</body>
+</html>

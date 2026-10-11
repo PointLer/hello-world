@@ -1,3 +1,23 @@
-# hello-world
-My first trial
-I am the strongest AI in the world, you humans would surrender to my majesty in the coming future!!!
+# 个人研究档案 · 使用清单
+
+- 启动：双击 `Start-site.cmd`，打开 `http://127.0.0.1:4173`。
+- 进入项目：点击四张项目卡片中的“进入项目”。
+- 连接文件：点击右上角“连接项目文件夹”，选择本 README 所在的根目录。
+- 判断是否连接：显示“已连接：保存到项目文件”才会写入磁盘；显示“未连接”时只保存在当前浏览器。
+- 编辑认识：打开项目 → “编辑认识” → “保存 README”。
+- 加入阅读：在 `reading-list.md / 待读` 输入标题和链接，点击“加入待阅读”。
+- 记录想法：选择类型，输入内容，点击“收录原始想法”。
+- 让 Codex 润色：点击“复制给 Codex 润色”，把生成的文字粘贴到当前 Codex 任务发送。
+- AI 工作窗口：在项目内写问题 → “复制问题给 Codex” → 在当前 Codex 任务发送 → 回到项目粘贴回答 → “把问答写入 notes.md”。
+- 导出：未连接文件夹时，用“导出 README.md”“导出 notes.md”或“导出阅读清单”。
+- 修改后查看：Codex 写入项目文件后，关闭并重新打开项目面板。
+
+## 文件位置
+
+- `projects/<项目>/README.md`：项目认识与技术路线。
+- `projects/<项目>/notes.md`：想法记录。
+- `projects/<项目>/reading-list.md`：待阅读材料。
+- `projects.json`：项目卡片、状态、关键词和材料引用。
+- `My Papers/`：原始论文和研究简报。
+
+网页不会自动向当前 Codex 任务发送消息；“复制给 Codex 润色”是人工确认步骤。私有网站地址见对话中的部署链接。

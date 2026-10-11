@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="个人研究与工作档案：论文、草稿、正在学习的技术路线与可继续的想法。" />
+  <title>ARCHIVE / 研究工作台</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      --ink: #171311;
+      --paper: #f4eee5;
+      --paper-dim: #c9bdae;
+      --ember: #ef7442;
+      --ember-deep: #bd4d2c;
+      --amber: #d5a36a;
+      --line: rgba(244, 238, 229, 0.16);
+      --line-dark: rgba(23, 19, 17, 0.15);
+      --panel: #211b18;
+      --panel-lift: #2b2420;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--paper);
+      background: var(--ink);
+      font-family: var(--mono);
+      font-size: 16px;
+      line-height: 1.6;
+      min-width: 320px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.42;
+      background-image: linear-gradient(rgba(255,255,255,.026) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+    button, a, textarea, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+
+    .shell { width: min(1220px, calc(100% - 40px)); margin: 0 auto; position: relative; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 0 20px; border-bottom: 1px solid var(--line);
+      position: relative; z-index: 2;
+    }
+    .mark { display: flex; align-items: center; gap: 12px; letter-spacing: .08em; font-size: 13px; }
+    .mark-symbol { color: var(--ember); font-size: 20px; line-height: 1; }
+    .mark-name { color: var(--paper); }
+    .mark-sub { color: var(--paper-dim); font-size: 11px; letter-spacing: .12em; }
+    .nav { display: flex; gap: 22px; color: var(--paper-dim); font-size: 12px; align-items: center; }
+    .nav a { text-decoration: none; transition: color .2s ease; }
+    .nav a:hover, .nav a:focus-visible { color: var(--ember); }
+    .connect-btn { border: 1px solid var(--line); color: var(--paper-dim); background: transparent; padding: 7px 10px; cursor: pointer; font-size: 11px; letter-spacing: .05em; }
+    .connect-btn:hover, .connect-btn:focus-visible { border-color: var(--ember); color: var(--paper); }
+    .connection-state { color: var(--paper-dim); font-size: 10px; letter-spacing: .03em; }
+
+    .hero { padding: 40px 0 34px; display: grid; grid-template-columns: 1.4fr .6fr; gap: 48px; align-items: end; }
+    .kicker { color: var(--ember); font-size: 12px; letter-spacing: .17em; text-transform: uppercase; margin-bottom: 22px; }
+    h1 { margin: 0; max-width: 850px; font-family: var(--serif); font-size: clamp(38px, 5vw, 62px); line-height: 1.2; letter-spacing: -.02em; font-weight: 500; }
+    .hero-copy { color: var(--paper-dim); max-width: 510px; font-size: 15px; line-height: 1.8; margin: 26px 0 0; }
+    .hero-aside { border-left: 1px solid var(--line); padding-left: 24px; color: var(--paper-dim); font-size: 13px; }
+    .hero-aside strong { display: block; color: var(--paper); font-size: 16px; font-weight: 400; margin-bottom: 12px; }
+    .hero-aside p { margin: 0 0 18px; }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .metric { border-top: 1px solid var(--line); padding-top: 12px; }
+    .metric-value { font-family: var(--serif); color: var(--amber); font-size: 32px; line-height: 1; }
+    .metric-label { color: var(--paper-dim); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; }
+
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); padding: 18px 0 20px; }
+    .section-title { font-size: 12px; letter-spacing: .16em; color: var(--paper-dim); text-transform: uppercase; }
+    .section-note { color: var(--paper-dim); font-size: 12px; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .project-card {
+      position: relative; min-height: 300px; padding: 26px 26px 24px; background: var(--panel);
+      border: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .project-card::after { content: attr(data-index); position: absolute; right: 20px; bottom: -6px; color: rgba(239,116,66,.12); font-family: var(--serif); font-size: 112px; line-height: 1; pointer-events: none; }
+    .project-card:hover { transform: translateY(-3px); border-color: rgba(239,116,66,.62); background: var(--panel-lift); }
+    .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+    .card-index { color: var(--ember); font-size: 12px; letter-spacing: .14em; }
+    .status { border: 1px solid rgba(213,163,106,.45); color: var(--amber); padding: 3px 8px; font-size: 10px; letter-spacing: .08em; white-space: nowrap; }
+    .project-card h2 { margin: 24px 0 12px; font-family: var(--serif); font-size: 30px; font-weight: 500; line-height: 1.3; letter-spacing: -.025em; max-width: 500px; }
+    .project-card .en { color: var(--paper-dim); font-size: 12px; letter-spacing: .05em; }
+    .project-card p { color: var(--paper-dim); font-size: 14px; line-height: 1.7; max-width: 540px; margin: 20px 0 0; }
+    .card-footer { display: flex; justify-content: space-between; align-items: end; margin-top: auto; padding-top: 30px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; max-width: 75%; }
+    .tag { padding: 4px 8px; color: var(--paper-dim); border: 1px solid var(--line); font-size: 10px; }
+    .open-btn { border: 0; background: transparent; color: var(--ember); cursor: pointer; padding: 4px 0 4px 10px; font-size: 12px; letter-spacing: .04em; position: relative; z-index: 1; }
+    .open-btn span { display: inline-block; transition: transform .2s ease; }
+    .open-btn:hover span { transform: translateX(5px); }
+
+    .log-strip { margin: 84px 0 72px; display: grid; grid-template-columns: 1fr 1.5fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .log-intro { padding: 28px 28px 28px 0; border-right: 1px solid var(--line); }
+    .log-intro h2 { font-family: var(--serif); font-weight: 500; font-size: 32px; line-height: 1.05; margin: 0 0 14px; }
+    .log-intro p { color: var(--paper-dim); font-size: 13px; margin: 0; }
+    .log-list { padding: 14px 0 14px 28px; }
+    .log-item { display: grid; grid-template-columns: 100px 1fr; gap: 18px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+    .log-item:last-child { border-bottom: 0; }
+    .log-date { color: var(--amber); }
+    .log-text { color: var(--paper-dim); }
+    .footer { padding: 0 0 28px; color: var(--paper-dim); font-size: 11px; display: flex; justify-content: space-between; gap: 18px; }
+
+    .overlay { position: fixed; inset: 0; background: rgba(13, 10, 9, .72); backdrop-filter: blur(6px); z-index: 10; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    .overlay.is-open { opacity: 1; pointer-events: auto; }
+    .panel { position: absolute; right: 0; top: 0; height: 100%; width: min(690px, 100%); background: var(--paper); color: var(--ink); transform: translateX(100%); transition: transform .3s cubic-bezier(.2,.8,.2,1); overflow-y: auto; }
+    .overlay.is-open .panel { transform: translateX(0); }
+    .panel-inner { padding: 30px 34px 42px; }
+    .panel-close { border: 1px solid var(--line-dark); background: transparent; width: 34px; height: 34px; cursor: pointer; color: var(--ink); font-size: 18px; float: right; }
+    .panel-head { padding: 44px 0 28px; border-bottom: 1px solid var(--line-dark); clear: both; }
+    .panel-eyebrow { color: var(--ember-deep); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+    .panel h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 6vw, 58px); line-height: .98; letter-spacing: -.04em; margin: 15px 0 14px; }
+    .panel-lede { margin: 0; color: #5b4e46; font-family: var(--serif); font-size: 18px; line-height: 1.45; max-width: 590px; }
+    .panel-section { padding: 24px 0; border-bottom: 1px solid var(--line-dark); }
+    .panel-label { color: var(--ember-deep); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+    .panel-body { color: #453a34; font-family: var(--serif); font-size: 16px; line-height: 1.7; margin: 0; }
+    .question-list { display: flex; flex-wrap: wrap; gap: 7px; }
+    .question { border: 1px solid rgba(23,19,17,.22); padding: 6px 9px; font-size: 12px; color: #51443c; }
+    .materials { display: grid; gap: 8px; }
+    .material { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; text-decoration: none; padding: 10px 12px; border: 1px solid rgba(23,19,17,.14); color: #332923; transition: border-color .2s, background .2s; }
+    .material:hover, .material:focus-visible { border-color: var(--ember); background: rgba(239,116,66,.08); }
+    .material-name { font-size: 13px; }
+    .material-type { color: #8d796b; font-size: 10px; white-space: nowrap; }
+    .note-form { background: #e9dfd3; padding: 16px; }
+    .note-form label { display: block; color: #6a574b; font-size: 11px; letter-spacing: .06em; margin-bottom: 7px; }
+    .note-form select, .note-form textarea { width: 100%; border: 1px solid rgba(23,19,17,.25); background: rgba(255,255,255,.42); color: var(--ink); padding: 10px 11px; outline: none; }
+    .note-form select:focus, .note-form textarea:focus { border-color: var(--ember-deep); box-shadow: 0 0 0 2px rgba(239,116,66,.18); }
+    .note-form textarea { min-height: 112px; resize: vertical; line-height: 1.55; font-family: var(--serif); font-size: 16px; margin-bottom: 10px; }
+    .note-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .primary-btn { border: 0; background: var(--ink); color: var(--paper); padding: 10px 14px; cursor: pointer; font-size: 12px; }
+    .primary-btn:hover { background: var(--ember-deep); }
+    .note-hint { color: #806e61; font-size: 11px; }
+    .note-stream { display: grid; gap: 10px; margin-top: 14px; }
+    .saved-note { border-left: 2px solid var(--ember); background: rgba(239,116,66,.08); padding: 11px 13px; }
+    .saved-note-head { display: flex; justify-content: space-between; color: var(--ember-deep); font-size: 10px; margin-bottom: 6px; }
+    .saved-note p { color: #453a34; font-family: var(--serif); font-size: 15px; line-height: 1.55; margin: 0; white-space: pre-wrap; }
+    .empty-note { color: #8a776b; font-size: 12px; }
+    .hero-copy { font-size: 16px; margin-top: 14px; }
+    .project-card { min-height: 280px; }
+    .project-card p, .panel-body { font-size: 16px; }
+    .tag, .status, .material-type, .card-index, .metric-label, .mark-sub { font-size: 12px; }
+    .nav, .connect-btn, .connection-state, .section-note, .open-btn, .question, .material-name, .panel-label, .note-hint, .empty-note, .primary-btn, .note-form label { font-size: 14px; }
+    .project-card .en { font-size: 13px; }
+    .panel { width: min(840px, 100%); }
+    .panel h2 { line-height: 1.2; }
+    .panel-head { padding-top: 20px; }
+    .panel-toolbar { display: flex; justify-content: flex-end; margin-bottom: 12px; }
+    .file-editor { width: 100%; min-height: 180px; background: #faf6ef; border: 1px solid var(--line-dark); padding: 12px; color: var(--ink); line-height: 1.75; font-family: inherit; font-size: 16px; resize: vertical; }
+    .markdown { white-space: pre-wrap; overflow-wrap: anywhere; font-family: inherit; font-size: 15px; line-height: 1.8; margin: 0; }
+    .file-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .quiet-btn { background: transparent; border: 1px solid #9d8574; padding: 7px 10px; color: #574437; cursor: pointer; font-size: 14px; }
+    .quiet-btn:hover { background: #e4d6c6; }
+    .route { display: grid; gap: 9px; margin: 0; padding-left: 26px; color: #55463b; font-size: 15px; }
+    .route li::marker { color: var(--ember-deep); font-family: var(--mono); }
+    .note-actions { flex-wrap: wrap; margin-top: 12px; justify-content: flex-start; }
+    .file-label { color: #6f5747; font-size: 14px; display: block; margin: 12px 0 8px; }
+    .reading-form { display: grid; gap: 10px; }
+    .reading-form input { width: 100%; padding: 10px; background: #faf6ef; color: var(--ink); border: 1px solid var(--line-dark); font: inherit; }
+    .storage-note { color: var(--paper-dim); font-size: 14px; margin: 18px 0 40px; }
+    .storage-note summary { cursor: pointer; }
+    .storage-note p { max-width: 800px; }
+    .note-stream { max-height: 360px; overflow-y: auto; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 20; max-width: min(90%, 640px); background: #f4eee5; border: 1px solid #bd4d2c; color: #402b20; padding: 12px 18px; font-size: 14px; box-shadow: 0 8px 32px #0005; }
+    .equation-strip { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 24px; color: var(--amber); font-size: 12px; letter-spacing: .09em; }
+    .equation-strip span { border: 1px solid rgba(213,163,106,.36); padding: 5px 8px; }
+    .equation-strip b { color: var(--ember); font-weight: 400; }
+    .project-card::before { content: "xᵢ ∈ V  ·  τ < ∞"; position: absolute; top: 16px; right: 20px; color: rgba(213,163,106,.48); font-size: 10px; letter-spacing: .08em; }
+    .project-card::after { content: "∂" attr(data-index); right: 18px; bottom: -6px; }
+    .panel { background: #181614; color: var(--paper); border-left: 1px solid rgba(239,116,66,.55); background-image: linear-gradient(rgba(239,116,66,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(239,116,66,.035) 1px, transparent 1px); background-size: 32px 32px; }
+    .panel::before { content: "∑  Δ  ∀  ∂  ⟂  0x01"; display: block; position: sticky; top: 0; z-index: 1; padding: 9px 34px; border-bottom: 1px solid rgba(244,238,229,.13); color: rgba(213,163,106,.65); background: rgba(24,22,20,.92); font-size: 11px; letter-spacing: .16em; }
+    .panel-inner { padding-top: 16px; }
+    .panel-close { border-color: rgba(244,238,229,.3); color: var(--paper); background: #211e1b; }
+    .panel-eyebrow, .panel-label { color: var(--ember); }
+    .panel-lede, .panel-body, .markdown, .route, .file-label { color: #d3c7ba; }
+    .panel-section { border-bottom-color: rgba(244,238,229,.15); }
+    .question { border-color: rgba(244,238,229,.22); color: #d3c7ba; background: rgba(255,255,255,.025); }
+    .material { border-color: rgba(244,238,229,.2); color: var(--paper); background: rgba(255,255,255,.025); }
+    .material:hover, .material:focus-visible { border-color: var(--ember); background: rgba(239,116,66,.1); }
+    .material-type { color: var(--amber); }
+    .note-form { background: rgba(31,28,25,.94); border: 1px solid rgba(244,238,229,.16); }
+    .note-form label, .note-hint, .empty-note { color: #b9a99b; }
+    .note-form select, .note-form textarea, .reading-form input, .file-editor { border-color: rgba(244,238,229,.28); background: #11100f; color: var(--paper); }
+    .note-form select:focus, .note-form textarea:focus, .reading-form input:focus, .file-editor:focus { border-color: var(--ember); box-shadow: 0 0 0 2px rgba(239,116,66,.18); }
+    .primary-btn { background: var(--ember); color: #171311; font-weight: 600; }
+    .primary-btn:hover { background: #ff9665; }
+    .quiet-btn { border-color: rgba(244,238,229,.3); color: var(--paper); background: #211e1b; }
+    .quiet-btn:hover { background: #332a25; }
+    .route li::marker { color: var(--ember); }
+    .saved-note { background: rgba(239,116,66,.08); }
+    .saved-note-head { color: var(--ember); }
+    .saved-note p { color: #d8cabd; }
+    .toast { background: #211e1b; border-color: var(--ember); color: var(--paper); }
+    .ai-window { border: 1px solid rgba(244,238,229,.18); background: rgba(13,12,11,.62); padding: 16px; }
+    .ai-window-head { display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:12px; }
+    .ai-window-title { color:var(--paper); font-size:14px; letter-spacing:.08em; }
+    .ai-window-state { color:var(--amber); font-size:12px; }
+    .ai-thread { display:grid; gap:9px; max-height:260px; overflow:auto; margin-bottom:14px; }
+    .ai-empty { color:#8e8075; font-size:14px; padding:12px 0; }
+    .ai-message { border-left:2px solid var(--line); padding:8px 11px; background:rgba(255,255,255,.025); }
+    .ai-message.user { border-left-color:var(--ember); }
+    .ai-message.assistant { border-left-color:var(--amber); }
+    .ai-message-label { color:var(--amber); font-size:11px; letter-spacing:.09em; margin-bottom:4px; }
+    .ai-message p { color:#d8cabd; font-family:var(--serif); font-size:15px; line-height:1.55; white-space:pre-wrap; margin:0; }
+    .ai-window textarea { width:100%; min-height:92px; resize:vertical; border:1px solid rgba(244,238,229,.26); background:#11100f; color:var(--paper); padding:10px 11px; font:inherit; line-height:1.55; }
+    .ai-window textarea:focus { border-color:var(--ember); box-shadow:0 0 0 2px rgba(239,116,66,.18); outline:none; }
+    .ai-actions { display:flex; gap:8px; flex-wrap:wrap; margin:9px 0 13px; }
+    .ai-window .file-label { margin-top:0; }
+    .ai-status { color:#b9a99b; font-size:12px; min-height:20px; margin-top:8px; }
+    :focus-visible { outline: 2px solid var(--ember); outline-offset: 4px; }
+    button:disabled { opacity: .6; cursor: wait; }
+    [hidden] { display: none !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+
+    @media (max-width: 800px) {
+      .shell { width: min(100% - 28px, 680px); }
+      .topbar { padding-top: 18px; }
+      .nav { gap: 12px; }
+      .topbar { flex-wrap: wrap; gap: 18px; }
+      .nav { flex-wrap: wrap; }
+      .mark-sub { display: none; }
+      .hero { padding: 56px 0 46px; grid-template-columns: 1fr; gap: 34px; }
+      .hero-aside { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card { min-height: 270px; }
+      .log-strip { grid-template-columns: 1fr; }
+      .log-intro { border-right: 0; border-bottom: 1px solid var(--line); padding-right: 0; }
+      .log-list { padding-left: 0; }
+    }
+    @media (max-width: 480px) {
+      .nav a:nth-child(2) { display: none; }
+      .hero { padding-top: 46px; }
+      h1 { font-size: 48px; }
+      .metrics { gap: 8px; }
+      .metric-value { font-size: 28px; }
+      .panel-inner { padding: 20px 20px 32px; }
+      .panel h2 { font-size: 42px; }
+      .note-actions { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="mark"><span class="mark-symbol">∴</span><span class="mark-name">ARCHIVE</span><span class="mark-sub">个人研究工作台 / 26—09</span></div>
+      <nav class="nav" aria-label="主导航"><a href="#work">WORK</a><a href="#log">LOG</a><a href="#about">ABOUT</a><span class="connection-state" id="connectionState">本机缓存</span><button class="connect-btn" id="connectFolder">连接项目文件夹</button></nav>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <div>
+          <div class="kicker">personal archive / research in progress</div>
+          <h1>研究档案<span style="color:var(--ember)"> ∴</span></h1>
+          <p class="hero-copy">论文与草稿，阅读与想法。打开一个项目，接着上次的问题往下做。</p>
+          <div class="equation-strip" aria-label="工作循环"><span>STATEₜ</span><b>→</b><span>PROBE</span><b>→</b><span>VALIDATE</span><b>→</b><span>NOTEₜ₊₁</span></div>
+        </div>
+        <aside class="hero-aside">
+          <strong>当前关注 / Balatro-CF</strong>
+          <p>可恢复状态 → 受控干预 → 紧凑评测</p>
+          <div class="metrics" aria-label="档案统计">
+            <div class="metric"><div class="metric-value">04</div><div class="metric-label">项目</div></div>
+            <div class="metric"><div class="metric-value">07</div><div class="metric-label">原始材料</div></div>
+            <div class="metric"><div class="metric-value">01</div><div class="metric-label">新方向</div></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="work" aria-labelledby="work-title">
+        <div class="section-head"><div class="section-title" id="work-title">01 / project index</div><div class="section-note">点击项目，进入它的工作面</div></div>
+        <div class="project-grid" id="projectGrid"></div>
+      </section>
+
+      <section class="log-strip" id="log" aria-labelledby="log-title">
+        <div class="log-intro"><div class="section-title" id="log-title">02 / source versions</div><h2>材料版本</h2><p>依据文件名与文档内容记录。CDC23 拓展稿已进入 IEEE TSP 待投递阶段，研究简报仍是进行中的方向。</p></div>
+        <div class="log-list">
+          <div class="log-item"><span class="log-date">2026 / 10</span><span class="log-text">CDC23 原论文已录用；WPEF × TSIPN 拓展正在整理，目标期刊为 IEEE TSP。</span></div>
+          <div class="log-item"><span class="log-date">2026 / 09</span><span class="log-text">Balatro-CF：研究简报，紧凑评测的预测效度待验证。</span></div>
+          <div class="log-item"><span class="log-date">2026 / 06</span><span class="log-text">SEGAN：文件标记为在投，当前稿件日期为 9 月 9 日。</span></div>
+          <div class="log-item"><span class="log-date">2026 / 07</span><span class="log-text">Physica A：文件标记为已接收。</span></div>
+        </div>
+      </section>
+      <details class="storage-note"><summary>文件与保存方式</summary><p>“连接项目文件夹”选择本网站的根文件夹（内含 projects 和 My Papers）。未连接时，页面会明确显示“未连接：只保存到当前浏览器”，点击“收录原始想法”不会写入电脑文件。</p><p>连接后，README、阅读清单与新想法直接写入各项目文件；浏览器会请求文件夹访问权限。推荐使用桌面版 Edge 或 Chrome。</p><p>“复制给 Codex 润色”会复制项目上下文与原始想法，请粘贴到当前任务发送。网页不会自行向此对话发送消息。</p></details>
+    </main>
+
+    <footer class="footer"><span>built for one person, expandable by design.</span><span>local archive / v0.1</span></footer>
+  </div>
+
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+      <div class="panel-inner">
+        <button class="panel-close" id="panelClose" aria-label="关闭项目面板">×</button>
+        <div class="panel-head"><div class="panel-eyebrow" id="panelEyebrow"></div><h2 id="panelTitle"></h2><p class="panel-lede" id="panelLede"></p></div>
+        <section class="panel-section"><div class="panel-label">README.md / 项目认识</div><pre class="markdown" id="panelReadme"></pre><textarea id="readmeEditor" class="file-editor" aria-label="编辑项目 README" hidden></textarea><div class="file-actions"><button class="quiet-btn" id="editReadme">编辑认识</button><button class="quiet-btn" id="saveReadme" hidden>保存 README</button><button class="quiet-btn" id="cancelReadme" hidden>取消编辑</button><button class="quiet-btn" id="exportReadme">导出 README.md</button></div></section>
+        <section class="panel-section"><div class="panel-label">技术路线 / 根据材料整理</div><ol class="route" id="panelRoute"></ol></section>
+        <section class="panel-section"><div class="panel-label">keywords / questions</div><div class="question-list" id="panelQuestions"></div></section>
+        <section class="panel-section"><div class="panel-label">materials</div><div class="materials" id="panelMaterials"></div></section>
+        <section class="panel-section"><div class="panel-label">reading-list.md / 待阅读</div><pre id="readingList" class="markdown"></pre><form id="readingForm" class="reading-form"><label class="file-label" for="readingTitle">添加阅读材料</label><input id="readingTitle" required maxlength="300" placeholder="标题或待阅读的主题"><label class="file-label" for="readingUrl">链接（可选）</label><input id="readingUrl" type="url" placeholder="https://"><button class="quiet-btn" type="submit">加入待阅读</button></form><div class="file-actions"><button class="quiet-btn" id="exportReading">导出阅读清单</button></div></section>
+        <section class="panel-section"><div class="panel-label">codex bridge / AI 工作窗口</div><div class="ai-window"><div class="ai-window-head"><span class="ai-window-title">PROJECT ASSISTANT</span><span class="ai-window-state" id="aiWindowState">就绪</span></div><div class="ai-thread" id="aiThread"></div><label class="file-label" for="aiQuestion">你的问题</label><textarea id="aiQuestion" placeholder="例如：这个项目最薄弱的假设是什么？下一步实验怎样验证？"></textarea><div class="ai-actions"><button class="primary-btn" id="askCodex">复制问题给 Codex</button><button class="quiet-btn" id="pasteAnswer">粘贴 Codex 回答</button></div><label class="file-label" for="aiAnswer">Codex 回答</label><textarea id="aiAnswer" placeholder="把 Codex 的回答粘贴到这里……"></textarea><div class="ai-actions"><button class="primary-btn" id="saveAiNote">把问答写入 notes.md</button><button class="quiet-btn" id="clearAi">清空当前问答</button></div><div class="ai-status" id="aiStatus">网页不会伪造回答；它负责整理上下文、接收 Codex 回答并保存。</div></div></section>
+        <section class="panel-section"><div class="panel-label">idea capture</div><div class="note-form"><label for="noteTone">记录方式</label><select id="noteTone"><option value="next">下一步</option><option value="question">待验证问题</option><option value="insight">关键洞见</option><option value="risk">风险 / 反例</option></select><label for="noteInput" style="margin-top:10px">把刚刚想到的写在这里</label><textarea id="noteInput" placeholder="哪怕只有一句话，也先放进来……"></textarea><div class="note-actions"><span class="note-hint">默认保存在本机；连接文件夹后会同步到项目 notes.md</span><button class="primary-btn" id="saveNote">收录原始想法 ↗</button></div><div class="note-actions"><button class="primary-btn" id="copyToCodex">复制给 Codex 润色</button><button class="primary-btn" id="exportNotes">导出 notes.md</button></div><div class="note-hint" id="syncStatus" style="margin-top:8px"></div></div><div class="note-stream" id="noteStream"></div></section>
+      </div>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
+
+

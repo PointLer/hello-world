@@ -1,0 +1,12 @@
+.tmp*
+.sites-runtime/
+.sites-checkout/
+site-source/
+artifacts/
+*.tar.gz
+__pycache__/
+node_modules/
+# Personal notes are written by the browser; keep them off the source remote.
+projects/*/notes.md
+projects/*/reading-list.md
+projects/*/materials/

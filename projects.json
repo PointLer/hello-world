@@ -1,0 +1,128 @@
+[
+  {
+    "index": "01",
+    "status": "拓展中 · 待投递",
+    "title": "CDC23 拓展",
+    "en": "WPEF × TSIPN / Byzantine-resilient sensing",
+    "summary": "CDC23 原论文已录用；当前继续推进 WPEF × TSIPN 的有限时限、信息受限拓展，目标期刊为 IEEE TSP。",
+    "readme": "CDC23 原论文已经录用。当前项目记录基于该工作的 WPEF × TSIPN 拓展：研究有限时限下的 Byzantine-resilient detection，比较不同信息记录，提出 witness-path erasure fusion（WPEF），并给出风险保证与 ring-lattice 评估。",
+    "questions": [
+      "finite-horizon detection",
+      "information hierarchy",
+      "witness-path erasure",
+      "risk certificate",
+      "general graph",
+      "IEEE TSP submission"
+    ],
+    "materials": [
+      [
+        "原工作稿：WPEF × TSIPN",
+        "CDC 23拓展_26年9月初版.html",
+        "HTML / 早期版本"
+      ],
+      [
+        "原论文：Consensus resiliency",
+        "CDC23_23年6月接收.pdf",
+        "PDF / 已接收"
+      ]
+    ],
+    "id": "cdc23",
+    "folder": "cdc23",
+    "reading": [],
+    "route": [
+      "原论文：环形晶格与 Byzantine 韧性（已录用）",
+      "拓展：有限时限检测、信息层级与 WPEF",
+      "后续：整理投稿版本与验证材料"
+    ]
+  },
+  {
+    "index": "02",
+    "status": "已接收 · Physica A",
+    "title": "非对称偏置吸收",
+    "en": "Asymmetric biased assimilation in the Deffuant–Weisbuch model",
+    "summary": "让 bounded-confidence 网络里的证据处理拥有方向：偏好不对称，群体结果也会不对称。",
+    "readme": "项目建立了带有两侧证据过滤指数的 asymmetric biased-assimilation DW model。理论部分关注 equilibrium families、局部稳定与随机收敛，实验部分比较 ER、WS、BA 网络上的 polarization、fragmentation、directional drift 与 neutral phase。",
+    "questions": [
+      "opinion dynamics",
+      "stability",
+      "phase behavior",
+      "directional drift",
+      "network effects"
+    ],
+    "materials": [
+      [
+        "论文：Asymmetric Biased Assimilation",
+        "PhysicaA-26年7月接收.pdf",
+        "PDF / 已接收"
+      ]
+    ],
+    "id": "physica",
+    "folder": "physica-a",
+    "reading": [],
+    "route": [
+      "DW 模型与非对称偏置",
+      "局部稳定性与随机收敛",
+      "整理：网络拓扑与相行为"
+    ]
+  },
+  {
+    "index": "03",
+    "status": "在投 · SEGAN",
+    "title": "重复定价与行为反馈",
+    "en": "Repeated pricing for demand-side management",
+    "summary": "把家庭负荷、参与意愿和聚合商的价格控制放进同一个 socio-technical loop。",
+    "readme": "这条线把一次性需求响应改写为 repeated control：价格影响当天购买，也会通过 bounded-confidence willingness update 改变未来的参与状态。模型里保留 minimum daily-energy floor、shadow-price coupling，以及带因果信息结构的 factorized actor–critic。",
+    "questions": [
+      "demand-side management",
+      "behavioral feedback",
+      "actor–critic",
+      "energy floor",
+      "virtual power plant"
+    ],
+    "materials": [
+      [
+        "论文：Repeated Pricing with Behavioral Feedback",
+        "SEGAN-26年6月在投.pdf",
+        "PDF / 在投"
+      ]
+    ],
+    "id": "segan",
+    "folder": "segan",
+    "reading": [],
+    "route": [
+      "用能约束与影子价格",
+      "意愿反馈与重复定价",
+      "整理：结构化 actor–critic"
+    ]
+  },
+  {
+    "index": "04",
+    "status": "进行中 · Agent evaluation",
+    "title": "Balatro-CF",
+    "en": "compact, causal evaluation for agents",
+    "summary": "从真实交互环境中生成、验证并选择紧凑题集，测试它能否预测未见模型的长期表现。",
+    "readme": "当前方向的工作假设是：一个 probe 不只是改一道题，而是对可恢复状态做一次受控干预。先构建 generator，再验证 probe family 的有效性，最后用 held-out systems 检验 compact evaluation 是否保留了长期行为信号。",
+    "questions": [
+      "agent evaluation",
+      "recoverable state",
+      "probe family",
+      "held-out validation",
+      "C-first scope"
+    ],
+    "materials": [
+      [
+        "Research Brief：Balatro-CF",
+        "Balatro_CF_Research_Brief.html",
+        "HTML / 研究简报"
+      ]
+    ],
+    "id": "balatro",
+    "folder": "balatro-cf",
+    "reading": [],
+    "route": [
+      "可恢复状态与分叉执行",
+      "受控干预与 probe 验证",
+      "待推进：紧凑题集与未见模型评测"
+    ]
+  }
+]
